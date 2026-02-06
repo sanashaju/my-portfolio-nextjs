@@ -84,7 +84,24 @@ export const PROJECTS = [
     ],
     link: "",
     github: "https://github.com/sanashaju/node-rest-api-typescript",  
-    }
+    },{
+    name: "RoyalEssence-Ecommerce-Platform",
+    description:
+      "RoyalEssence is a luxury perfume e-commerce platform designed for fragrance enthusiasts. Discover premium scents, wishlist favorites, manage your cart, and enjoy a seamless shopping experience, while admins ensure smooth product and order management.",
+    tech: [
+      "Node.js",
+      "JavaScript",
+      "Bootstrap 5",
+      "Handlebars",
+      "Chart.js",
+      "Express.js",
+      "Multer",
+      "MongoDBAtlas",
+      "JWT",
+    ],
+    link: "royal-essence.onrender.com/",
+    github: "https://github.com/sanashaju/RoyalEssence-Ecommerce-Platform",
+  },
   // Add more projects as needed
 ];
 
