@@ -105,3 +105,29 @@ export const PROJECTS = [
   // Add more projects as needed
 ];
 
+export const EXPERIENCE = [
+  {
+    company: "G-Tec Computer Education",
+    companyLink: "",
+    role: "Full Stack Development Intern",
+    period: "Jul 2025 - Feb 2026 (Expected)",
+    location: "Onsite",
+    description:
+      "Working on full-stack development with a focus on backend engineering. Building secure RESTful APIs, implementing caching and session management with Redis, designing scalable architectures, and integrating relational and NoSQL databases. Gaining hands-on experience with containerization, API performance optimization, and modern JavaScript development workflows.",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Docker",
+      "REST APIs",
+      "Backend Architecture",
+    ],
+  },
+];
+
+
