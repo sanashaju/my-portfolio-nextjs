@@ -134,6 +134,12 @@ export const EXPERIENCE = [
 export const EDUCATION = [
   
   {
+    degree: "Senior Secondary (Plus Two) ",
+    institution: "Govt.Model Girls Higher Secondary School, Irinjalakuda",
+    institutionLink: "https://in.worldorgs.com/catalog/irinjalakuda/high-school/government-model-girls-higher-secondary-school",
+    period: "Jul 2019 - Mar 2021",
+  },
+  {
     degree: "Secondary (SSLC)",
     institution: "Sreekrishna Higher Secondary School, Anandapuram",
     institutionLink: "https://www.justdial.com/Thrissur/Sree-Krishna-Higher-Secondary-School-Near-Mahavishnu-Temple-Anandapuram/9999PX487-X487-170405112818-M1U9_BZDET",
