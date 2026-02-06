@@ -132,7 +132,12 @@ export const EXPERIENCE = [
 
 
 export const EDUCATION = [
-  
+  {
+    degree: "Bachelor of Computer Science (B.CS).",
+    institution: " Nirmala College Of Arts And Science, Meloor,Chalakudy",
+    institutionLink: "https://ncas.nirmalacollege.edu.in/",
+    period: "Jul 2021 - Jul 2024 ",
+  },
   {
     degree: "Senior Secondary (Plus Two) ",
     institution: "Govt.Model Girls Higher Secondary School, Irinjalakuda",
