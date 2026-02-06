@@ -131,4 +131,14 @@ export const EXPERIENCE = [
 ];
 
 
+export const EDUCATION = [
+  
+  {
+    degree: "Secondary (SSLC)",
+    institution: "Sreekrishna Higher Secondary School, Anandapuram",
+    institutionLink: "https://www.justdial.com/Thrissur/Sree-Krishna-Higher-Secondary-School-Near-Mahavishnu-Temple-Anandapuram/9999PX487-X487-170405112818-M1U9_BZDET",
+    period: "Jul 2018 - Mar 2019",
+  },
 
+  // Add more education as needed
+];
