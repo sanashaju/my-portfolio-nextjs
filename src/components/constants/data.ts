@@ -108,7 +108,7 @@ export const PROJECTS = [
 export const EXPERIENCE = [
   {
     company: "G-Tec Computer Education",
-    companyLink: "",
+    companyLink: "https://gtecirinjalakuda.com/",
     role: "Full Stack Development Intern",
     period: "Jul 2025 - Feb 2026 (Expected)",
     location: "Onsite",
@@ -129,5 +129,6 @@ export const EXPERIENCE = [
     ],
   },
 ];
+
 
 
