@@ -11,14 +11,15 @@ const SKILL_ICONS: Record<string, string> = {
   "Vue.js": "vue",
   Angular: "angular",
   Redux: "redux",
-  TailwindCSS: "tailwind",
+  "Tailwind CSS": "tailwind",
   Bootstrap: "bootstrap",
   Sass: "sass",
   Less: "less",
   jQuery: "jquery",
   "Node.js": "nodejs",
   "Express.js": "express",
-  NestJS: "nestjs",
+  "Nest.js": "nestjs",
+  Prisma: "prisma",
   Django: "django",
   Flask: "flask",
   "Spring Boot": "spring",
@@ -52,16 +53,21 @@ const SKILL_ICONS: Record<string, string> = {
   Docker: "docker",
   Kubernetes: "kubernetes",
   Vercel: "vercel",
+  Render: "render",
+  Railway: "railway",
   Netlify: "netlify",
   Heroku: "heroku",
   "GitHub Actions": "githubactions",
   Jenkins: "jenkins",
   "VS Code": "vscode",
+  Cursor: "cursor",
   Git: "git",
   GitHub: "github",
   GitLab: "gitlab",
   Bitbucket: "bitbucket",
   Postman: "postman",
+  Swagger: "swagger",
+  PowerShell: "powershell",
   Figma: "figma",
   Vite: "vite",
   Webpack: "webpack",
@@ -73,21 +79,31 @@ const SKILL_ICONS: Record<string, string> = {
   MacOS: "apple",
 };
 
-const SkillBadge = ({ skill }: { skill: string }) => (
-  <span className="skill-chip">
-    {SKILL_ICONS[skill] && (
+const SkillBadge = ({ skill }: { skill: string }) => {
+  const iconSlug = SKILL_ICONS[skill];
+  if (!iconSlug) return <span className="skill-chip">{skill}</span>;
+
+  // Icons known to be missing in skillicons.dev but available in simpleicons.org
+  const isSimpleIcon = ["render", "railway", "swagger", "cursor", "powershell"].includes(iconSlug);
+  
+  const iconUrl = isSimpleIcon 
+    ? `https://cdn.simpleicons.org/${iconSlug}` // branded colors
+    : `https://skillicons.dev/icons?i=${iconSlug}`;
+
+  return (
+    <span className="skill-chip">
       <Image
-        src={`https://skillicons.dev/icons?i=${SKILL_ICONS[skill]}`}
+        src={iconUrl}
         alt={`${skill} icon`}
         width={16}
         height={16}
         className="w-4 h-4"
         unoptimized
       />
-    )}
-    {skill}
-  </span>
-);
+      {skill}
+    </span>
+  );
+};
 
 const Skills = () => {
   return (
