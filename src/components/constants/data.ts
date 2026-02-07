@@ -10,7 +10,7 @@ export const ABOUT_ME = {
     "Hi, I’m Sana Illikkal, a backend developer with a strong focus on building reliable, scalable, and secure server-side applications. I enjoy solving complex problems and turning ideas into efficient APIs and systems.",
     "I’m passionate about developing secure authentication flows, robust RESTful APIs, and intelligent data-driven applications. I enjoy crafting backend systems that are scalable, maintainable, and built with clean, modern architecture.",
   ],
-  profileImage: "/sana 1.jpeg", // Replace with your profile image
+  profileImage: "/sana 1.jpeg", // Restore original image
   profileGif: "/profile-gif.gif", // Replace with your personalised gif
 };
 
@@ -70,39 +70,29 @@ export const SKILLS = {
 
 export const PROJECTS = [
   {
+    id: 1,
     name: "node-rest-api-typescript",
+    category: "BACKEND",
     description:
-      " A scalable Node.js REST API built with TypeScript, featuring JWT-based authentication, MongoDB for data persistence, and Redis for caching. The application is Dockerized for consistent development and deployment, following clean architecture and modern backend best practices.",
-    tech: [
-      "Node.js",
-      "TypeScript",
-      "JWT",
-      "Redis",
-      "Docker",
-      "MongoDB",
-      "argon2",
-    ],
+      "**Problem:** Traditional APIs often suffer from performance bottlenecks and weak type safety.\n**Impact:** This leads to fragile codebases and poor developer experience.\n**Solution:** A scalable Node.js REST API built with TypeScript, featuring JWT-based authentication, MongoDB for data persistence, and Redis for caching. Dockerized for consistent deployment.",
+    tech: ["Node.js", "TypeScript", "JWT", "Redis", "Docker", "MongoDB"],
     link: "",
-    github: "https://github.com/sanashaju/node-rest-api-typescript",  
-    },{
-    name: "RoyalEssence-Ecommerce-Platform",
+    github: "https://github.com/sanashaju/node-rest-api-typescript",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
+    color: "#3178C6",
+  },
+  {
+    id: 2,
+    name: "RoyalEssence E-commerce",
+    category: "E-COMMERCE",
     description:
-      "RoyalEssence is a luxury perfume e-commerce platform designed for fragrance enthusiasts. Discover premium scents, wishlist favorites, manage your cart, and enjoy a seamless shopping experience, while admins ensure smooth product and order management.",
-    tech: [
-      "Node.js",
-      "JavaScript",
-      "Bootstrap 5",
-      "Handlebars",
-      "Chart.js",
-      "Express.js",
-      "Multer",
-      "MongoDBAtlas",
-      "JWT",
-    ],
+      "**Problem:** Many perfume shop websites lack a premium feel and smooth user experience.\n**Impact:** High bounce rates and low customer trust in luxury niche markets.\n**Solution:** RoyalEssence is a luxury perfume e-commerce platform. Features include wishlist management, seamless cart experience, and robust admin product management.",
+    tech: ["Node.js", "JavaScript", "Bootstrap 5", "Handlebars", "Express.js", "MongoDB"],
     link: "https://royal-essence.onrender.com/",
     github: "https://github.com/sanashaju/RoyalEssence-Ecommerce-Platform",
+    image: "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
+    color: "#00FF94",
   },
-  // Add more projects as needed
 ];
 
 export const EXPERIENCE = [

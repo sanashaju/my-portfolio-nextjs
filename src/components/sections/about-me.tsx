@@ -74,11 +74,6 @@ export default function AboutMe() {
     <section id="about" ref={sectionRef} className="pb-12 space-y-6">
       <div className="flex flex-col gap-2">
         <h2 className="section-title">About.</h2>
-        {/* <p className="text-sm text-muted-foreground max-w-2xl">
-          A backend developer dedicated to building secure, scalable, and
-          efficient server-side systems. Turning complex logic into seamless
-          digital experiences.
-        </p> */}
       </div>
 
       <div className="space-y-10">
