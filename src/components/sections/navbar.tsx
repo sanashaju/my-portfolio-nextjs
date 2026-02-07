@@ -11,6 +11,7 @@ const STAGGER = 30; // Delay between each letter in milliseconds
 
 // Navigation items with their respective href values
 const navItems = [
+  { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Github", href: "#github" },
   { name: "Leetcode", href: "#leetcode" },

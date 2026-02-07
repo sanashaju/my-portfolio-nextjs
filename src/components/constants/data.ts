@@ -29,8 +29,8 @@ export const SOCIAL_LINKS = {
   instagram: "",
   email: "mailto:sanashajuillikkal@gmail.com",
   // blog: "https://yourblog.com", // remove if you don't have a blog
-  // resume:
-  //   "https://drive.google.com/file/d/1lf2eQpjK10k9CFMpI7HCLGmskxRb3hdT/view?usp=sharing",
+  resume:
+    "https://drive.google.com/file/d/1lf2eQpjK10k9CFMpI7HCLGmskxRb3hdT/view?usp=sharing",
   phone: "+91 77367 09420",
   whatsapp: "https://wa.me/ 77367 09420",
 };
