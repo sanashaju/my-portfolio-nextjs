@@ -56,29 +56,29 @@ function ProjectRow({
   const rowRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="border-b border-foreground/5 last:border-b-0" ref={rowRef}>
+    <div className="border-b border-foreground/10 last:border-b-0" ref={rowRef}>
       {/* Row Header */}
       <motion.div
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={onToggle}
-        whileHover={{ x: 10, backgroundColor: "rgba(var(--foreground), 0.03)" }}
+        whileHover={{ x: 10, backgroundColor: "rgba(var(--foreground), 0.05)" }}
         className={`
           group relative py-6 px-4 md:px-8 cursor-pointer transition-all duration-300
-          ${isExpanded ? "bg-foreground/[0.04]" : ""}
+          ${isExpanded ? "bg-foreground/[0.06]" : ""}
         `}
       >
         <div className="flex items-center justify-between gap-4">
           {/* Left Side */}
           <div className="flex items-center gap-4 md:gap-10 flex-1">
             <span
-              className={`font-mono transition-all duration-300 text-xs md:text-sm whitespace-nowrap ${isExpanded || isHovered ? "text-accent scale-110" : "text-muted-foreground/50"}`}
+              className={`font-mono transition-all duration-300 text-xs md:text-sm whitespace-nowrap ${isExpanded || isHovered ? "text-accent scale-110" : "text-muted-foreground/70"}`}
             >
               {index < 9 ? `0${index + 1}` : index + 1}
             </span>
 
             <h3
-              className={`font-semibold text-xl md:text-3xl transition-all duration-500 tracking-tight ${isExpanded || isHovered ? "text-foreground translate-x-2" : "text-muted-foreground/40"}`}
+              className={`font-semibold text-xl md:text-3xl transition-all duration-500 tracking-tight ${isExpanded || isHovered ? "text-foreground translate-x-2" : "text-foreground/60"}`}
             >
               <ShuffleText text={project.name} isActive={isHovered} />
             </h3>
@@ -111,12 +111,12 @@ function ProjectRow({
 
           {/* Right Side */}
           <div className="flex items-center gap-6 flex-shrink-0">
-            <span className={`hidden md:block font-mono text-[10px] tracking-[0.2em] transition-colors uppercase ${isHovered ? "text-accent" : "text-muted-foreground/30"}`}>
+            <span className={`hidden md:block font-mono text-[10px] tracking-[0.2em] transition-colors uppercase ${isHovered ? "text-accent" : "text-muted-foreground/50"}`}>
               {project.category}
             </span>
             <motion.div
               animate={{ rotate: isExpanded ? 45 : 0, scale: isHovered ? 1.2 : 1 }}
-              className={`transition-colors flex-shrink-0 ${isExpanded || isHovered ? "text-accent" : "text-muted-foreground/40"}`}
+              className={`transition-colors flex-shrink-0 ${isExpanded || isHovered ? "text-accent" : "text-muted-foreground/60"}`}
             >
               <Plus size={20} />
             </motion.div>
@@ -132,7 +132,7 @@ function ProjectRow({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-            className="overflow-hidden bg-foreground/[0.02]"
+            className="overflow-hidden bg-foreground/[0.04]"
           >
             <div className="px-4 md:px-8 pb-10 pt-6">
               <div className="grid lg:grid-cols-12 gap-10 items-start">
@@ -142,7 +142,7 @@ function ProjectRow({
                     initial={{ scale: 0.95, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.1, duration: 0.5 }}
-                    className="aspect-video w-full rounded-2xl overflow-hidden border border-border/40 relative group bg-black/40 shadow-2xl"
+                    className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 relative group bg-black/40 shadow-2xl"
                   >
                     <img
                       src={project.image || "/placeholder.svg"}
@@ -163,7 +163,7 @@ function ProjectRow({
                     <h4 className="text-[10px] text-accent font-bold uppercase tracking-[0.3em] flex items-center gap-2">
                        <span className="w-8 h-[1px] bg-accent/30"></span> // Dossier
                     </h4>
-                    <div className="text-sm md:text-base text-foreground/70 leading-relaxed space-y-4 font-light">
+                    <div className="text-sm md:text-base text-foreground/85 leading-relaxed space-y-4 font-normal">
                       {project.description.split('\n').map((line: string, i: number) => {
                         const parts = line.split('**');
                         if (parts.length === 3) {
@@ -188,7 +188,7 @@ function ProjectRow({
                         {project.tech.map((tech: string) => (
                           <span
                             key={tech}
-                            className="text-[10px] px-3 py-1.5 bg-foreground/[0.03] border border-foreground/10 rounded-lg font-mono text-foreground/60 hover:text-accent hover:border-accent/40 hover:bg-accent/5 transition-all duration-300"
+                            className="text-[10px] px-3 py-1.5 bg-foreground/[0.05] border border-foreground/20 rounded-lg font-mono text-foreground/70 hover:text-accent hover:border-accent/40 hover:bg-accent/5 transition-all duration-300"
                           >
                             {tech}
                           </span>
@@ -201,7 +201,7 @@ function ProjectRow({
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 md:flex-none px-6 py-3 rounded-xl bg-foreground text-background font-bold font-mono text-xs tracking-widest transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
+                        className="flex-1 md:flex-none px-6 py-4 rounded-xl bg-foreground text-background font-bold font-mono text-xs tracking-widest transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
                       >
                         <Github size={14} />
                         SOURCE_CODE
@@ -211,7 +211,7 @@ function ProjectRow({
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 md:flex-none group/btn px-6 py-3 rounded-xl bg-accent/10 border border-accent/30 text-accent font-bold font-mono text-xs tracking-widest transition-all duration-300 hover:bg-accent hover:text-background hover:shadow-[0_0_30px_rgba(var(--accent),0.4)] flex items-center justify-center gap-2"
+                          className="flex-1 md:flex-none group/btn px-6 py-4 rounded-xl bg-accent/15 border border-accent/40 text-accent font-bold font-mono text-xs tracking-widest transition-all duration-300 hover:bg-accent hover:text-background hover:shadow-[0_0_30px_rgba(var(--accent),0.4)] flex items-center justify-center gap-2"
                         >
                           LIVE_DEMO
                           <ExternalLink size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
@@ -237,13 +237,13 @@ export default function Projects() {
       <div className="container mx-auto max-w-6xl px-4">
         <div className="flex flex-col gap-4 mb-16 px-4 md:px-0">
           <h2 className="section-title">Featured Work.</h2>
-          <p className="text-sm md:text-base text-muted-foreground/60 max-w-xl leading-relaxed">
+          <p className="text-sm md:text-base text-muted-foreground/80 max-w-xl leading-relaxed">
             A selection of projects where I've tackled complex architectural 
             challenges and pushed the boundaries of backend engineering.
           </p>
         </div>
 
-        <div className="rounded-3xl border border-border/40 bg-foreground/[0.01] backdrop-blur-sm overflow-hidden shadow-2xl">
+        <div className="rounded-3xl border border-border/60 bg-foreground/[0.03] backdrop-blur-md overflow-hidden shadow-2xl">
           <div className="flex flex-col">
             {PROJECTS.map((project: any, index: number) => (
               <ProjectRow
