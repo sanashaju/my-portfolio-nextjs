@@ -259,7 +259,7 @@ export function TerminalWindow() {
             </span>
             <span className="text-muted-foreground">
               <Typewriter
-                text="Backend Developer specializing in Node.js, Express, and Database Architectures"
+                text="Full Stack Developer specializing in Node.js, Express, and Database Architectures"
                 delay={50}
                 speed={5}
               />

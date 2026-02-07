@@ -3,11 +3,11 @@
 
 export const ABOUT_ME = {
   name: "Sana Illikkal",
-  title: "Backend Developer",
+  title: "Full Stack Developer",
   location: "Irinjalakuda, Thrissur, Kerala, India",
   email: "sanashajuillikkal@gmail.com",
   description: [
-    "Hi, I’m Sana Illikkal, a backend developer with a strong focus on building reliable, scalable, and secure server-side applications. I enjoy solving complex problems and turning ideas into efficient APIs and systems.",
+    "Hi, I’m Sana Illikkal, a full stack developer with a strong focus on building reliable, scalable, and secure server-side applications. I enjoy solving complex problems and turning ideas into efficient APIs and systems.",
     "I’m passionate about developing secure authentication flows, robust RESTful APIs, and intelligent data-driven applications. I enjoy crafting backend systems that are scalable, maintainable, and built with clean, modern architecture.",
   ],
   profileImage: "/sana 1.jpeg", // Restore original image

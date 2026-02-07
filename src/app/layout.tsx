@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://shasbin.in"),
   title: "Sana Illikkal - Full Stack Developer | Backend Expert",
   description:
-    "Portfolio of Sana Shaju, a Backend Developer from Irinjalakuda, Thrissur, India. Expert in Node.js, Express, React, Next.js, and scaling secure backend systems.",
+    "Portfolio of Sana Shaju, a Full Stack Developer from Irinjalakuda, Thrissur, India. Expert in Node.js, Express, React, Next.js, and scaling secure backend systems.",
   keywords: [
     "Sana Shaju",
     "Full Stack Developer",
-    "Backend Developer",
+    "Full Stack Development",
     "MERN Stack",
     "Next.js",
     "React",
@@ -107,9 +107,9 @@ export default function RootLayout({
               "@type": "Person",
               name: "Sana Shaju",
               url: "https://your-domain.com",
-              jobTitle: "Backend Developer",
+              jobTitle: "Full Stack Developer",
               description:
-                "Backend Developer specializing in Node.js, Express, and scalable backend architectures.",
+                "Full Stack Developer specializing in Node.js, Express, and scalable backend architectures.",
               image: "https://your-domain.com/profile-image.jpg",
               address: {
                 "@type": "PostalAddress",
@@ -118,7 +118,7 @@ export default function RootLayout({
                 addressCountry: "India",
               },
               knowsAbout: [
-                "Backend Development",
+                "Full Stack Development",
                 "Node.js",
                 "Express.js",
                 "TypeScript",
