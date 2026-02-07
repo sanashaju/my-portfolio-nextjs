@@ -14,11 +14,11 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://shasbin.in"),
-  title: "Adhil Unnikrishnan P - Full Stack Developer | Backend Expert",
+  title: "Sana Shaju - Full Stack Developer | Backend Expert",
   description:
-    "Portfolio of Adhil Unnikrishnan P, a Backend Developer from Irinjalakuda, Thrissur, India. Expert in Node.js, Express, React, Next.js, and scaling secure backend systems.",
+    "Portfolio of Sana Shaju, a Backend Developer from Irinjalakuda, Thrissur, India. Expert in Node.js, Express, React, Next.js, and scaling secure backend systems.",
   keywords: [
-    "Adhil Unnikrishnan P",
+    "Sana Shaju",
     "Full Stack Developer",
     "Backend Developer",
     "MERN Stack",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     "Kerala",
     "Software Engineer",
   ],
-  authors: [{ name: "Adhil Unnikrishnan P", url: "https://github.com/adhilunnikrishnan" }],
-  creator: "Adhil Unnikrishnan P",
-  publisher: "Adhil Unnikrishnan P",
+  authors: [{ name: "Sana Shaju", url: "https://github.com/sanashaju" }],
+  creator: "Sana Shaju",
+  publisher: "Sana Shaju",
   alternates: {
     canonical: "/",
   },
@@ -41,25 +41,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://your-domain.com", // Recommendation: update this to your actual domain
-    title: "Adhil Unnikrishnan P - Full Stack Developer Portfolio",
+    title: "Sana Shaju - Full Stack Developer Portfolio",
     description:
-      "Explore the projects and skills of Adhil Unnikrishnan P. Specializing in scalable backend systems and modern frontend interfaces.",
-    siteName: "Adhil Unnikrishnan P Portfolio",
+      "Explore the projects and skills of Sana Shaju. Specializing in scalable backend systems and modern frontend interfaces.",
+    siteName: "Sana Shaju Portfolio",
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Adhil Unnikrishnan P Portfolio",
+        alt: "Sana Shaju Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adhil Unnikrishnan P - Full Stack Developer",
+    title: "Sana Shaju - Full Stack Developer",
     description:
-      "Explore the projects and skills of Adhil Unnikrishnan P. Specializing in scalable backend systems and modern frontend interfaces.",
-    creator: "@adhilunnikrishnan",
+      "Explore the projects and skills of Sana Shaju. Specializing in scalable backend systems and modern frontend interfaces.",
+    creator: "@sanashaju  ",
     images: ["/twitter-image.png"],
   },
   robots: {
@@ -105,7 +105,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Adhil Unnikrishnan P",
+              name: "Sana Shaju",
               url: "https://your-domain.com",
               jobTitle: "Backend Developer",
               description:
@@ -128,9 +128,9 @@ export default function RootLayout({
                 "Docker",
               ],
               sameAs: [
-                "https://github.com/adhilunnikrishnan",
-                "https://www.linkedin.com/in/adhilunnikrishnan/",
-                "https://leetcode.com/u/adhilunnikrishnan/",
+                "https://github.com/sanashaju",
+                "https://www.linkedin.com/in/sanashaju/",
+                "https://leetcode.com/u/sanaillikkal/",
               ],
             }),
           }}
