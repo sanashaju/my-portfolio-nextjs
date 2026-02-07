@@ -7,8 +7,10 @@ import {
   Instagram,
   Copy,
   Check,
+  ChevronDown,
 } from "lucide-react";
-import { SiLeetcode, SiWhatsapp, SiGithub, SiLinkedin } from "react-icons/si";
+import { SiLeetcode, SiWhatsapp } from "react-icons/si";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { ABOUT_ME, SOCIAL_LINKS } from "../constants/data";
 
 type ContactLink = {
@@ -39,13 +41,13 @@ const Contact = () => {
       label: "GitHub",
       value: SOCIAL_LINKS.github.replace("https://", ""),
       href: SOCIAL_LINKS.github,
-      icon: SiGithub,
+      icon: FaGithub,
     },
     SOCIAL_LINKS.linkedin && {
       label: "LinkedIn",
       value: SOCIAL_LINKS.linkedin.replace("https://", ""),
       href: SOCIAL_LINKS.linkedin,
-      icon: SiLinkedin,
+      icon: FaLinkedin,
     },
     SOCIAL_LINKS.leetcode && {
       label: "LeetCode",
@@ -71,6 +73,21 @@ const Contact = () => {
     try {
       await navigator.clipboard.writeText(emailAddress);
       setCopied(true);
+
+      // Trigger Theme-Complementary Confetti
+      const confetti = (await import("canvas-confetti")).default;
+      confetti({
+        particleCount: 150,
+        spread: 80,
+        origin: { y: 0.8 },
+        colors: ["#A855F7", "#D946EF", "#8B5CF6", "#C084FC", "#FFFFFF"], // Purple, Fuchsia, Violet palette
+        ticks: 200,
+        gravity: 1.2,
+        decay: 0.94,
+        startVelocity: 30,
+        shapes: ["circle", "square"],
+      });
+
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // no-op
@@ -99,151 +116,150 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-6 space-y-4">
-      <h2 className="section-title w-full">Let&apos;s Connect.</h2>
+    <section className="py-6 space-y-8">
+      <div className="flex flex-col gap-3">
+        <h2 className="section-title">Let&apos;s Connect.</h2>
+        <p className="text-sm text-muted-foreground/80 max-w-lg leading-relaxed font-light">
+          Whether you have a project in mind or just want to say hi, my inbox is always open.
+        </p>
+      </div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="glass-panel p-6 space-y-6">
-          <div>
-            <p className="text-xl font-semibold">Let&apos;s Connect</p>
-            <p className="text-sm text-muted-foreground">
-              I&apos;m always open to new opportunities, freelance gigs, or a
-              quick coffee chat about ideas.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            {contactLinks.map((item) => {
-              const Icon = item.icon;
-              const content = (
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[hsl(var(--accent)/0.15)] flex items-center justify-center">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                      {item.label}
-                    </p>
-                    <p className="text-sm font-mono text-foreground break-all">
-                      {item.value}
-                    </p>
-                  </div>
+      <div className="grid gap-8 lg:grid-cols-2">
+        <div className="flex flex-col gap-6 mt-2 md:mt-0">
+          <div className="glass-panel pt-2 px-6 md:pt-3 md:px-8 pb-8 relative overflow-hidden group">
+            
+            <div className="relative z-10">
+              {/* Ultra-compact Header */}
+              <div className="flex items-center justify-between gap-4 border-b border-foreground/5 pb-2 mb-3">
+                <div className="flex items-center gap-2">
+                  <h3 className="text-xs font-bold tracking-tight uppercase opacity-40">Network</h3>
                 </div>
-              );
+              </div>
 
-              if (item.href) {
-                const isMailLink = item.href.startsWith("mailto:");
-                const isExternal = item.href.startsWith("http");
-                if (isMailLink) {
-                  return (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      onClick={(event) =>
-                        handleSpecialNavigation(event, item.href!)
-                      }
-                      className="flex items-center gap-4 rounded-2xl border border-transparent bg-[hsl(var(--background)/0.4)]/50 px-4 py-3 text-left transition-colors hover:border-[hsl(var(--border)/0.6)]"
-                    >
-                      {content}
-                    </a>
+              <div className="space-y-2.5">
+                {contactLinks.map((item) => {
+                  const Icon = item.icon;
+                  const content = (
+                    <div className="flex items-center gap-5 w-full">
+                      <div className="w-12 h-12 rounded-2xl bg-foreground/[0.03] border border-foreground/5 flex items-center justify-center group-hover/link:border-accent/30 group-hover/link:bg-accent/10 transition-all duration-300">
+                        <Icon className="w-5 h-5 group-hover/link:text-accent group-hover/link:scale-110 transition-all duration-300" />
+                      </div>
+                      <div className="space-y-1 flex-1">
+                        <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground font-bold opacity-60">
+                          {item.label}
+                        </p>
+                        <p className="text-sm font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap max-w-[200px] md:max-w-none">
+                          {item.value}
+                        </p>
+                      </div>
+                    </div>
                   );
-                }
 
-                return (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target={isExternal ? "_blank" : undefined}
-                    rel={isExternal ? "noopener noreferrer" : undefined}
-                    className="flex items-center gap-4 rounded-2xl border border-transparent bg-[hsl(var(--background)/0.4)]/50 px-4 py-3 transition-colors hover:border-[hsl(var(--border)/0.6)]"
-                  >
-                    {content}
-                  </a>
-                );
-              }
+                  const linkClass = "group/link flex items-center gap-4 rounded-[2rem] border border-transparent bg-foreground/[0.02] px-5 py-4 text-left transition-all duration-300 hover:bg-foreground/[0.04] hover:border-foreground/10 hover:translate-x-1";
 
-              return (
-                <div
-                  key={item.label}
-                  className="flex items-center gap-4 rounded-2xl border border-transparent bg-[hsl(var(--background)/0.4)]/50 px-4 py-3"
-                >
-                  {content}
-                </div>
-              );
-            })}
+                  if (item.href) {
+                    const isExternal = item.href.startsWith("http");
+                    return (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        target={isExternal ? "_blank" : undefined}
+                        rel={isExternal ? "noopener noreferrer" : undefined}
+                        onClick={(event) => !isExternal && handleSpecialNavigation(event, item.href!)}
+                        className={linkClass}
+                      >
+                        {content}
+                      </a>
+                    );
+                  }
+
+                  return (
+                    <div key={item.label} className={linkClass}>
+                      {content}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="glass-panel p-6 space-y-4">
-          <div>
-            <p className="text-xl font-semibold">Get In Touch</p>
-            <p className="text-sm text-muted-foreground">
-              Choose your preferred way to reach me.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-[hsl(var(--border)/0.35)] p-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[hsl(var(--accent)/0.15)] flex items-center justify-center">
-                <Mail className="w-5 h-5" />
+        <div className="flex flex-col gap-6 mt-2 md:mt-0">
+          <div className="glass-panel pt-2 px-6 md:pt-3 md:px-8 pb-8 space-y-3 relative overflow-hidden">
+             {/* Ultra-compact Header */}
+             <div className="flex items-center justify-between gap-4 border-b border-foreground/5 pb-2 mb-3">
+              <div className="flex items-center gap-2">
+                <h3 className="text-xs font-bold tracking-tight uppercase opacity-40">Direct</h3>
               </div>
-              <div>
-                <p className="text-sm font-semibold">Email Me</p>
-                <p className="text-xs text-muted-foreground">
-                  Send me an email directly.
-                </p>
+              <div className="flex items-center gap-2">
+                 <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                 <span className="text-[9px] font-bold text-accent uppercase tracking-widest hidden sm:inline">Active</span>
               </div>
             </div>
 
-            <div className="space-y-3">
-              <div className="relative px-4 py-3 rounded-xl border border-[hsl(var(--border)/0.35)] bg-[hsl(var(--background)/0.6)] text-sm font-mono flex items-center justify-between gap-3">
-                <span className="truncate">{emailAddress}</span>
-                <button
-                  type="button"
+            <div className="space-y-2.5 pt-0">
+              {/* Refined Email Copy Area */}
+              <div className="space-y-2.5">
+                <div 
                   onClick={handleCopyEmail}
-                  className="inline-flex items-center gap-1 text-xs font-semibold rounded-lg px-3 py-1.5 bg-[hsl(var(--accent))] text-[hsl(var(--background))]"
+                  className="group/copy relative cursor-pointer"
                 >
-                  {copied ? (
-                    <Check className="w-4 h-4" />
-                  ) : (
-                    <Copy className="w-4 h-4" />
-                  )}
-                  {copied ? "Copied" : "Copy"}
-                </button>
+                  <div className="absolute -inset-[1px] bg-gradient-to-r from-accent/50 to-accent-secondary/50 rounded-2xl blur opacity-20 group-hover/copy:opacity-40 transition duration-500" />
+                  <div className="relative flex items-center justify-between gap-4 px-6 py-5 bg-background border border-foreground/5 rounded-2xl transition-all duration-300 hover:border-accent/40 group-hover/copy:bg-foreground/[0.01]">
+                    <div className="flex items-center gap-4 truncate">
+                      <Mail className="w-5 h-5 text-accent/60 group-hover/copy:text-accent transition-colors" />
+                      <span className="font-mono text-sm tracking-tight text-foreground/80 group-hover/copy:text-foreground transition-colors truncate">
+                        {emailAddress}
+                      </span>
+                    </div>
+                    
+                    <button
+                      type="button"
+                      className={`
+                        shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl font-bold font-mono text-[10px] tracking-widest uppercase transition-all duration-300
+                        ${copied 
+                          ? "bg-accent/10 text-accent border border-accent/20" 
+                          : "bg-foreground text-background hover:scale-105 active:scale-95"
+                        }
+                      `}
+                    >
+                      {copied ? <Check size={14} strokeWidth={3} /> : <Copy size={14} strokeWidth={3} />}
+                      {copied ? "COPIED" : "COPY"}
+                    </button>
+                  </div>
+                </div>
+
+                <a
+                  href={emailHref}
+                  onClick={(event) => handleSpecialNavigation(event, emailHref)}
+                  className="w-full inline-flex items-center justify-center gap-3 rounded-2xl bg-foreground/5 border border-foreground/10 text-foreground text-xs font-bold font-mono tracking-[0.2em] py-5 transition-all duration-300 hover:bg-accent hover:text-background hover:border-accent hover:shadow-[0_20px_40px_rgba(var(--accent),0.2)] uppercase group"
+                >
+                  <Mail className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                  Initiate_Handshake
+                </a>
               </div>
-              <a
-                href={emailHref}
-                onClick={(event) => handleSpecialNavigation(event, emailHref)}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[hsl(var(--accent))] text-[hsl(var(--background))] text-sm font-semibold py-3 transition hover:bg-[hsl(var(--accent)/0.9)]"
+
+              {/* Refined WhatsApp Section */}
+              <button
+                type="button"
+                onClick={handleOpenWhatsApp}
+                disabled={!whatsappLink}
+                className="w-full group inline-flex items-center justify-between gap-4 px-6 py-5 rounded-2xl border border-green-500/20 bg-green-500/5 transition-all duration-300 hover:bg-green-500/10 hover:border-green-500/40 disabled:opacity-30 disabled:grayscale"
               >
-                <Mail className="w-4 h-4" />
-                Send Email
-              </a>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <SiWhatsapp className="w-5 h-5 text-green-500" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm font-bold">Secure_Chat</p>
+                    <p className="text-[10px] text-green-500/60 font-mono">ENCRYPTED_LINE</p>
+                  </div>
+                </div>
+                <div className="w-8 h-8 rounded-full border border-green-500/20 flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-all">
+                  <ChevronDown className="w-4 h-4 -rotate-90" />
+                </div>
+              </button>
             </div>
-          </div>
-
-          <div className="rounded-2xl border border-[hsl(var(--border)/0.35)] p-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-green-500/10 text-green-400 flex items-center justify-center">
-                <SiWhatsapp className="w-5 h-5" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold">WhatsApp</p>
-                <p className="text-xs text-muted-foreground">
-                  Chat with me instantly.
-                </p>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={handleOpenWhatsApp}
-              disabled={!whatsappLink}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 text-white text-sm font-semibold py-3 transition hover:bg-green-400 disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              <SiWhatsapp className="w-4 h-4" />
-              Open WhatsApp
-            </button>
           </div>
         </div>
       </div>

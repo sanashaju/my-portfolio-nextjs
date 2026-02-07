@@ -95,6 +95,10 @@ function ProjectRow({
               }}
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="absolute inset-0 rounded-xl overflow-hidden border border-accent/30 shadow-[0_20px_50px_rgba(var(--accent),0.2)] bg-black"
+              style={{
+                borderColor: isHovered ? project.color : undefined,
+                boxShadow: isHovered ? `0 20px 50px ${project.color}40` : undefined
+              }}
             >
               <img
                 src={project.image || "/placeholder.svg"}
@@ -102,9 +106,12 @@ function ProjectRow({
                 className="w-full h-full object-cover opacity-80"
               />
               {/* Enhanced Scanning Effect */}
-              <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
-                <div className="absolute top-0 left-0 w-full h-[2px] bg-accent/40 shadow-[0_0_15px_rgba(var(--accent),0.6)] animate-scan" />
-                <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-accent/5" />
+              <div className="absolute inset-0 pointer-events-none overflow-hidden z-20">
+                <div className="absolute inset-0 opacity-40 animate-scan" 
+                     style={{ 
+                       background: `linear-gradient(to bottom, transparent 40%, ${project.color} 50%, transparent 60%)`,
+                     }} />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
               </div>
             </motion.div>
           </div>
@@ -142,18 +149,68 @@ function ProjectRow({
                     initial={{ scale: 0.95, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.1, duration: 0.5 }}
-                    className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 relative group bg-black/40 shadow-2xl"
+                    className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 relative group bg-black shadow-2xl"
                   >
-                    <img
+                    {/* Noise texture overlay */}
+                    <motion.div
+                      initial={{ opacity: 0.4 }}
+                      animate={{ opacity: 0 }}
+                      transition={{ duration: 1.5, delay: 0.3 }}
+                      className="absolute inset-0 z-10 pointer-events-none"
+                      style={{
+                        backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
+                        mixBlendMode: 'overlay'
+                      }}
+                    />
+
+                    {/* Main image with smooth multi-stage blur */}
+                    <motion.img
                       src={project.image || "/placeholder.svg"}
                       alt={project.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      initial={{
+                        filter: 'blur(60px) brightness(0.4) contrast(1.3) saturate(0.3)',
+                        opacity: 0.3
+                      }}
+                      animate={{
+                        filter: [
+                          'blur(60px) brightness(0.4) contrast(1.3) saturate(0.3)',
+                          'blur(30px) brightness(0.7) contrast(1.15) saturate(0.7)',
+                          'blur(10px) brightness(0.9) contrast(1.05) saturate(0.95)',
+                          'blur(0px) brightness(1) contrast(1) saturate(1)'
+                        ],
+                        opacity: [0.3, 0.6, 0.9, 1]
+                      }}
+                      transition={{
+                        duration: 0.8,
+                        times: [0, 0.3, 0.65, 1],
+                        ease: [0.22, 1, 0.36, 1]
+                      }}
+                      className="w-full h-full object-cover"
+                      style={{
+                        willChange: 'filter, opacity'
+                      }}
                     />
-                    {/* Scanning effect also on main image */}
-                    <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
-                      <div className="absolute top-0 left-0 w-full h-[1px] bg-accent animate-scan" />
+
+                    {/* Scanline overlay */}
+                    <motion.div
+                      initial={{ opacity: 0.3 }}
+                      animate={{ opacity: 0 }}
+                      transition={{ duration: 1.5, delay: 0.5 }}
+                      className="absolute inset-0 pointer-events-none z-20"
+                      style={{
+                        backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, ${project.color}08 2px, ${project.color}08 4px)`
+                      }}
+                    />
+
+                    {/* Hologram Scanlines */}
+                    <div className="absolute inset-0 pointer-events-none z-30">
+                      <div className="absolute inset-0" 
+                           style={{ backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, ${project.color}08 2px, ${project.color}08 4px)` }} />
+                      {/* Moving scanner line in expanded view */}
+                      <div className="absolute inset-0 opacity-20 animate-scan"
+                           style={{ background: `linear-gradient(to bottom, transparent 40%, ${project.color} 50%, transparent 60%)` }} />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent pointer-events-none z-10" />
                   </motion.div>
                 </div>
 
