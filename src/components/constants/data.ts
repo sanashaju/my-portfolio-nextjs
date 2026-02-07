@@ -99,7 +99,7 @@ export const PROJECTS = [
       "MongoDBAtlas",
       "JWT",
     ],
-    link: "royal-essence.onrender.com/",
+    link: "https://royal-essence.onrender.com/",
     github: "https://github.com/sanashaju/RoyalEssence-Ecommerce-Platform",
   },
   // Add more projects as needed
