@@ -53,33 +53,43 @@ const useISTTime = () => {
 // UI COMPONENTS
 // =============================================
 const ProfileImage = ({ isHovering, setIsHovering }: ProfileImageProps) => (
-  <div className="flex-shrink-0 relative">
+  <div className="flex-shrink-0 relative group">
+    {/* Brilliant White Glass Frame */}
     <div
-      className="w-28 h-28 rounded-3xl overflow-hidden border border-border cursor-pointer duration-300 hover-lift"
+      className="relative w-[126px] h-[126px] p-[3px] rounded-[2.2rem] bg-white/20 dark:bg-white/10 backdrop-blur-2xl border border-white/40 dark:border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.15)] transition-all duration-500 group-hover:scale-105 group-hover:rotate-2 group-hover:border-white/70 group-hover:shadow-[0_0_40px_rgba(255,255,255,0.25)]"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {isHovering ? (
-        <Image
-          src={ABOUT_ME.profileGif}
-          alt="Profile GIF"
-          width={112}
-          height={112}
-          className="w-full h-full object-cover"
-          unoptimized
-        />
-      ) : (
-        <Image
-          src={ABOUT_ME.profileImage}
-          alt={ABOUT_ME.name}
-          width={112}
-          height={112}
-          className="w-full h-full object-cover"
-          priority
-        />
-      )}
+      {/* Glossy White Sheen */}
+      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent rounded-t-[2.2rem] pointer-events-none" />
+      
+      {/* Precise White Inner Edge */}
+      <div className="absolute inset-0 rounded-[2.2rem] border-[0.5px] border-white/30 pointer-events-none" />
+      
+      <div className="w-full h-full rounded-[2rem] overflow-hidden bg-background/40 relative z-10">
+        {isHovering ? (
+          <Image
+            src={ABOUT_ME.profileGif}
+            alt="Profile GIF"
+            width={128}
+            height={128}
+            className="w-full h-full object-cover"
+            unoptimized
+          />
+        ) : (
+          <Image
+            src={ABOUT_ME.profileImage}
+            alt={ABOUT_ME.name}
+            width={128}
+            height={128}
+            className="w-full h-full object-cover"
+            priority
+          />
+        )}
+      </div>
     </div>
-    <span className="absolute -inset-3 blur-2xl bg-gradient-to-br from-[hsl(var(--accent)/0.45)] to-[hsl(var(--accent-secondary)/0.35)] opacity-60 pointer-events-none"></span>
+    {/* Bright White Ambient Touch */}
+    <span className="absolute -inset-6 blur-3xl bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></span>
   </div>
 );
 
