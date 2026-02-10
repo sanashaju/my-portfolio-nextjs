@@ -386,8 +386,8 @@ This project is licensed under the ISC License. See the [LICENSE](LICENSE) file 
 
 <div align="center">
 
-**⭐ If you like this project, give it a star on [GitHub](https://github.com/shasbinas/my-portfolio-nextjs)! ⭐**
+**⭐ If you like this project, give it a star on [GitHub](https://github.com/sanashaju/my-portfolio-nextjs)! ⭐**
 
-Made with ❤️ by [Shasbin AS](https://github.com/shasbinas)
+Made with ❤️ by [Sana Shaju](https://github.com/sanashaju)
 
 </div>
