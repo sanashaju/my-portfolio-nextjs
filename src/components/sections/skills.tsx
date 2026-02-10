@@ -84,7 +84,7 @@ const SkillBadge = ({ skill }: { skill: string }) => {
   if (!iconSlug) return <span className="skill-chip">{skill}</span>;
 
   // Icons known to be missing in skillicons.dev but available in simpleicons.org
-  const isSimpleIcon = ["render", "railway", "swagger", "cursor", "powershell"].includes(iconSlug);
+  const isSimpleIcon = ["render", "railway", "swagger", "cursor"].includes(iconSlug);
   
   const iconUrl = isSimpleIcon 
     ? `https://cdn.simpleicons.org/${iconSlug}` // branded colors
