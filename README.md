@@ -359,7 +359,7 @@ This project is licensed under the ISC License. See the [LICENSE](LICENSE) file 
 
 **Shasbin AS** - Backend Developer
 
-- 📧 Email: [sanashajuillikkal@gmail.com] (mailto:sanashajuillikkal@gmail.com)
+- 📧 Email: [sanashajuillikkal@gmail.com](mailto:sanashajuillikkal@gmail.com)
 - 💼 LinkedIn: [sanashaju](https://www.linkedin.com/in/sanashaju)
 - 🐙 GitHub: [@sanashaju](https://github.com/sanashaju)
 - 💻 LeetCode: [@sanashaju](https://leetcode.com/u/sanaillikkal)
