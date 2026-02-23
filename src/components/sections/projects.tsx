@@ -217,9 +217,9 @@ function ProjectRow({
                 {/* Right: Details */}
                 <div className="lg:col-span-7 flex flex-col gap-8">
                   <div className="space-y-4">
-                    <h4 className="text-[10px] text-accent font-bold uppercase tracking-[0.3em] flex items-center gap-2">
+                    {/* <h4 className="text-[10px] text-accent font-bold uppercase tracking-[0.3em] flex items-center gap-2">
                        <span className="w-8 h-[1px] bg-accent/30"></span> // Dossier
-                    </h4>
+                    </h4> */}
                     <div className="text-sm md:text-base text-foreground/85 leading-relaxed space-y-4 font-normal">
                       {project.description.split('\n').map((line: string, i: number) => {
                         const parts = line.split('**');
