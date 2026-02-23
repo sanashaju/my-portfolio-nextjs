@@ -8,14 +8,14 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.23.25-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-[![GitHub stars](https://img.shields.io/github/stars/shasbinas/my-portfolio-nextjs?style=for-the-badge&logo=github)](https://github.com/shasbinas/my-portfolio-nextjs/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/shasbinas/my-portfolio-nextjs?style=for-the-badge&logo=github)](https://github.com/shasbinas/my-portfolio-nextjs/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/shasbinas/my-portfolio-nextjs?style=for-the-badge&logo=github)](https://github.com/shasbinas/my-portfolio-nextjs/issues)
+[![GitHub stars](https://img.shields.io/github/stars/sanashaju/my-portfolio-nextjs?style=for-the-badge&logo=github)](https://github.com/sanashaju/my-portfolio-nextjs/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/sanashaju/my-portfolio-nextjs?style=for-the-badge&logo=github)](https://github.com/sanashaju/my-portfolio-nextjs/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/sanashaju/my-portfolio-nextjs?style=for-the-badge&logo=github)](https://github.com/sanashaju/my-portfolio-nextjs/issues)
 [![License](https://img.shields.io/badge/License-ISC-blue?style=for-the-badge)](LICENSE)
 
 **A modern, responsive, and feature-rich portfolio website built with Next.js 15, React 19, and TypeScript**
 
-[Report Bug](https://github.com/shasbinas/my-portfolio-nextjs/issues) • [Request Feature](https://github.com/shasbinas/my-portfolio-nextjs/issues)
+[Report Bug](https://github.com/sanashaju/my-portfolio-nextjs/issues) • [Request Feature](https://github.com/sanashaju/my-portfolio-nextjs/issues)
 
 </div>
 
