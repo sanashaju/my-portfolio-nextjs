@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { SiLeetcode, SiWhatsapp } from "react-icons/si";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import confetti from "canvas-confetti";
 import { ABOUT_ME, SOCIAL_LINKS } from "../constants/data";
 
 type ContactLink = {
@@ -71,26 +72,48 @@ const Contact = () => {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(emailAddress);
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(emailAddress);
+      } else {
+        // Fallback for non-secure contexts or unsupported browsers
+        const textArea = document.createElement("textarea");
+        textArea.value = emailAddress;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          document.execCommand("copy");
+        } catch (err) {
+          console.error("Fallback: Oops, unable to copy", err);
+        }
+        document.body.removeChild(textArea);
+      }
+      
       setCopied(true);
 
       // Trigger Theme-Complementary Confetti
-      const confetti = (await import("canvas-confetti")).default;
-      confetti({
-        particleCount: 150,
-        spread: 80,
-        origin: { y: 0.8 },
-        colors: ["#A855F7", "#D946EF", "#8B5CF6", "#C084FC", "#FFFFFF"], // Purple, Fuchsia, Violet palette
-        ticks: 200,
-        gravity: 1.2,
-        decay: 0.94,
-        startVelocity: 30,
-        shapes: ["circle", "square"],
-      });
+      const fire = (confetti as any).default || confetti;
+      if (typeof fire === "function") {
+        fire({
+          particleCount: 150,
+          spread: 80,
+          origin: { y: 0.7 }, // Move slightly up for better visibility
+          colors: ["#A855F7", "#D946EF", "#8B5CF6", "#C084FC", "#FFFFFF"],
+          ticks: 200,
+          gravity: 1.2,
+          decay: 0.94,
+          startVelocity: 30,
+          shapes: ["circle", "square"],
+          zIndex: 9999, // Ensure it's on top
+        });
+      }
 
       setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // no-op
+    } catch (err) {
+      console.error("Failed to copy: ", err);
     }
   };
 

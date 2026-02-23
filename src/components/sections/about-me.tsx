@@ -6,6 +6,7 @@ import { ChevronDown, Mail, FileText } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
+import confetti from "canvas-confetti";
 import { ABOUT_ME, SOCIAL_LINKS } from "@/components/constants/data";
 import { TerminalWindow } from "@/components/ui/TerminalWindow";
 import { AboutTerminal } from "@/components/ui/AboutTerminal";
@@ -146,25 +147,45 @@ export default function AboutMe() {
               e.preventDefault();
               try {
                 const email = href.replace("mailto:", "");
-                await navigator.clipboard.writeText(email);
+                
+                if (navigator.clipboard && window.isSecureContext) {
+                  await navigator.clipboard.writeText(email);
+                } else {
+                  // Fallback
+                  const textArea = document.createElement("textarea");
+                  textArea.value = email;
+                  textArea.style.position = "fixed";
+                  textArea.style.left = "-999999px";
+                  textArea.style.top = "-999999px";
+                  document.body.appendChild(textArea);
+                  textArea.focus();
+                  textArea.select();
+                  try {
+                    document.execCommand("copy");
+                  } catch (err) {
+                    console.error("Fallback: Oops, unable to copy", err);
+                  }
+                  document.body.removeChild(textArea);
+                }
                 
                 // Trigger Theme-Complementary Confetti
-                const confetti = (await import("canvas-confetti")).default;
-                confetti({
-                  particleCount: 150,
-                  spread: 80,
-                  origin: { y: 0.8 },
-                  colors: ["#A855F7", "#a221b6ff", "#8B5CF6", "#301050ff", "#FFFFFF"], // Purple/Violet palette
-                  ticks: 200,
-                  gravity: 1.2,
-                  decay: 0.94,
-                  startVelocity: 30,
-                  shapes: ["circle", "square"],
-                });
-
-                // Optional: alert or toast could go here, but confetti is a strong signal
+                const fire = (confetti as any).default || confetti;
+                if (typeof fire === "function") {
+                  fire({
+                    particleCount: 150,
+                    spread: 80,
+                    origin: { y: 0.7 },
+                    colors: ["#A855F7", "#a221b6ff", "#8B5CF6", "#301050ff", "#FFFFFF"],
+                    ticks: 200,
+                    gravity: 1.2,
+                    decay: 0.94,
+                    startVelocity: 30,
+                    shapes: ["circle", "square"],
+                    zIndex: 9999,
+                  });
+                }
               } catch (err) {
-                // Fallback to mailto if copy fails
+                // Fallback to mailto if copy fails completely
                 window.location.href = href;
               }
             };

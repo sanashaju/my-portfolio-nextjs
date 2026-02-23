@@ -13,7 +13,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shasbin.in"),
+  metadataBase: new URL("https://sanaillikkal.in"),
   title: "Sana Illikkal - Full Stack Developer | Backend Expert",
   description:
     "Portfolio of Sana Shaju, a Full Stack Developer from Irinjalakuda, Thrissur, India. Expert in Node.js, Express, React, Next.js, and scaling secure backend systems.",
