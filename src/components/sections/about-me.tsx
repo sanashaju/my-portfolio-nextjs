@@ -30,16 +30,16 @@ const SOCIAL_BUTTONS = [
     label: "LeetCode",
     icon: <SiLeetcode className="w-5 h-5" />,
   },
-  {
-    href: SOCIAL_LINKS.resume,
-    label: "Resume",
-    icon: (
-      <>
-        <FileText className="w-5 h-5" /> Resume
-      </>
-    ),
-    className: "flex items-center gap-2 font-medium px-6",
-  },
+  // {
+  //   href: SOCIAL_LINKS.resume,
+  //   label: "Resume",
+  //   icon: (
+  //     <>
+  //       <FileText className="w-5 h-5" /> Resume
+  //     </>
+  //   ),
+  //   className: "flex items-center gap-2 font-medium px-6",
+  // },
   {
     href: SOCIAL_LINKS.email,
     label: "Email",
