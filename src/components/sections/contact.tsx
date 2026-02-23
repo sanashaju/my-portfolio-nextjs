@@ -147,13 +147,13 @@ const Contact = () => {
         </p>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
         <div className="flex flex-col gap-6 mt-2 md:mt-0">
-          <div className="glass-panel pt-2 px-6 md:pt-3 md:px-8 pb-8 relative overflow-hidden group">
+          <div className="glass-panel p-4 sm:p-6 md:p-8 relative overflow-hidden group">
             
             <div className="relative z-10">
               {/* Ultra-compact Header */}
-              <div className="flex items-center justify-between gap-4 border-b border-foreground/5 pb-2 mb-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-foreground/5 pb-2 mb-3">
                 <div className="flex items-center gap-2">
                   <h3 className="text-xs font-bold tracking-tight uppercase opacity-40">Network</h3>
                 </div>
@@ -163,7 +163,7 @@ const Contact = () => {
                 {contactLinks.map((item) => {
                   const Icon = item.icon;
                   const content = (
-                    <div className="flex items-center gap-5 w-full">
+                    <div className="flex items-center gap-3 sm:gap-5 w-full min-w-0">
                       <div className="w-12 h-12 rounded-2xl bg-foreground/[0.03] border border-foreground/5 flex items-center justify-center group-hover/link:border-accent/30 group-hover/link:bg-accent/10 transition-all duration-300">
                         <Icon className="w-5 h-5 group-hover/link:text-accent group-hover/link:scale-110 transition-all duration-300" />
                       </div>
@@ -171,14 +171,14 @@ const Contact = () => {
                         <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground font-bold opacity-60">
                           {item.label}
                         </p>
-                        <p className="text-sm font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap max-w-[200px] md:max-w-none">
+                        <p className="text-sm font-medium text-foreground truncate max-w-full md:max-w-none">
                           {item.value}
                         </p>
                       </div>
                     </div>
                   );
 
-                  const linkClass = "group/link flex items-center gap-4 rounded-[2rem] border border-transparent bg-foreground/[0.02] px-5 py-4 text-left transition-all duration-300 hover:bg-foreground/[0.04] hover:border-foreground/10 hover:translate-x-1";
+                  const linkClass = "group/link flex items-center gap-3 sm:gap-4 rounded-[2rem] border border-transparent bg-foreground/[0.02] px-4 py-3 sm:px-5 sm:py-4 text-left transition-all duration-300 hover:bg-foreground/[0.04] hover:border-foreground/10 hover:translate-x-1";
 
                   if (item.href) {
                     const isExternal = item.href.startsWith("http");
@@ -208,9 +208,9 @@ const Contact = () => {
         </div>
 
         <div className="flex flex-col gap-6 mt-2 md:mt-0">
-          <div className="glass-panel pt-2 px-6 md:pt-3 md:px-8 pb-8 space-y-3 relative overflow-hidden">
+          <div className="glass-panel p-4 sm:p-6 md:p-8 space-y-3 relative overflow-hidden">
              {/* Ultra-compact Header */}
-             <div className="flex items-center justify-between gap-4 border-b border-foreground/5 pb-2 mb-3">
+             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-foreground/5 pb-2 mb-3">
               <div className="flex items-center gap-2">
                 <h3 className="text-xs font-bold tracking-tight uppercase opacity-40">Direct</h3>
               </div>
@@ -228,10 +228,10 @@ const Contact = () => {
                   className="group/copy relative cursor-pointer"
                 >
                   <div className="absolute -inset-[1px] bg-gradient-to-r from-accent/50 to-accent-secondary/50 rounded-2xl blur opacity-20 group-hover/copy:opacity-40 transition duration-500" />
-                  <div className="relative flex items-center justify-between gap-4 px-6 py-5 bg-background border border-foreground/5 rounded-2xl transition-all duration-300 hover:border-accent/40 group-hover/copy:bg-foreground/[0.01]">
-                    <div className="flex items-center gap-4 truncate">
-                      <Mail className="w-5 h-5 text-accent/60 group-hover/copy:text-accent transition-colors" />
-                      <span className="font-mono text-sm tracking-tight text-foreground/80 group-hover/copy:text-foreground transition-colors truncate">
+                  <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5 bg-background border border-foreground/5 rounded-2xl transition-all duration-300 hover:border-accent/40 group-hover/copy:bg-foreground/[0.01]">
+                    <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                      <Mail className="w-5 h-5 shrink-0 text-accent/60 group-hover/copy:text-accent transition-colors" />
+                      <span className="font-mono text-xs sm:text-sm tracking-tight text-foreground/80 group-hover/copy:text-foreground transition-colors truncate">
                         {emailAddress}
                       </span>
                     </div>
@@ -255,7 +255,7 @@ const Contact = () => {
                 <a
                   href={emailHref}
                   onClick={(event) => handleSpecialNavigation(event, emailHref)}
-                  className="w-full inline-flex items-center justify-center gap-3 rounded-2xl bg-foreground/5 border border-foreground/10 text-foreground text-xs font-bold font-mono tracking-[0.2em] py-5 transition-all duration-300 hover:bg-accent hover:text-background hover:border-accent hover:shadow-[0_20px_40px_rgba(var(--accent),0.2)] uppercase group"
+                  className="w-full inline-flex items-center justify-center gap-3 rounded-2xl bg-foreground/5 border border-foreground/10 text-foreground text-[10px] sm:text-xs font-bold font-mono tracking-[0.1em] sm:tracking-[0.2em] py-4 sm:py-5 transition-all duration-300 hover:bg-accent hover:text-background hover:border-accent hover:shadow-[0_20px_40px_rgba(var(--accent),0.2)] uppercase group"
                 >
                   <Mail className="w-4 h-4 group-hover:rotate-12 transition-transform" />
                   Initiate_Handshake
@@ -267,7 +267,7 @@ const Contact = () => {
                 type="button"
                 onClick={handleOpenWhatsApp}
                 disabled={!whatsappLink}
-                className="w-full group inline-flex items-center justify-between gap-4 px-6 py-5 rounded-2xl border border-green-500/20 bg-green-500/5 transition-all duration-300 hover:bg-green-500/10 hover:border-green-500/40 disabled:opacity-30 disabled:grayscale"
+                className="w-full group inline-flex items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5 rounded-2xl border border-green-500/20 bg-green-500/5 transition-all duration-300 hover:bg-green-500/10 hover:border-green-500/40 disabled:opacity-30 disabled:grayscale"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
