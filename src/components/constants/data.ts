@@ -86,7 +86,7 @@ export const PROJECTS = [
   {
     id: 2,
     name: "RoyalEssence E-commerce",
-    category: "E-COMMERCE",
+    category: "Full Stack",
     description:
       "**Problem:** Many perfume shop websites lack a premium feel and smooth user experience.\n**Impact:** High bounce rates and low customer trust in luxury niche markets.\n**Solution:** RoyalEssence is a luxury perfume e-commerce platform. Features include wishlist management, seamless cart experience, and robust admin product management.",
     tech: ["Node.js", "JavaScript", "Bootstrap 5", "Handlebars", "Express.js", "MongoDB"],

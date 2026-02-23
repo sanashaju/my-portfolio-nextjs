@@ -215,8 +215,8 @@ const Contact = () => {
                 <h3 className="text-xs font-bold tracking-tight uppercase opacity-40">Direct</h3>
               </div>
               <div className="flex items-center gap-2">
-                 <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                 <span className="text-[9px] font-bold text-accent uppercase tracking-widest hidden sm:inline">Active</span>
+                 <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                 <span className="text-[9px] font-bold text-green-500 uppercase tracking-widest hidden sm:inline">Active</span>
               </div>
             </div>
 
