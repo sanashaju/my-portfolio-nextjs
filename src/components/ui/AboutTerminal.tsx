@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const DEFAULT_ABOUT_TEXT =
-  "Hi, I’m Sana Illikkal, a full stack developer with a strong focus on building reliable, scalable, and secure server-side applications. I enjoy solving complex problems and turning ideas into efficient APIs and systems. Passionate about developing secure authentication flows, robust RESTful APIs, and intelligent data-driven applications. I enjoy crafting backend systems that are scalable, maintainable, and built with clean, modern architecture.";
+  "Hi, I'm Sana Shaju, a Full Stack Developer specializing in the MERN stack — building scalable, high-performance web applications using React.js, Next.js, Node.js, NestJS, TypeScript, MongoDB, and PostgreSQL. With experience delivering projects for clients worldwide, I craft efficient, user-centric digital products that solve real-world problems. Passionate about clean code and continuous growth, I'm committed to turning ideas into impactful, production-ready solutions.";
 
 const COMMAND_DELAY_MS = 600;
 

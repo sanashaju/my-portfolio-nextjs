@@ -14,53 +14,57 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sanaillikkal.in"),
-  title: "Sana Illikkal - Full Stack Developer | Backend Expert",
+  title: {
+    default: "Sana Illikkal | Full Stack Developer & Backend Engineer",
+    template: "%s | Sana Illikkal",
+  },
   description:
-    "Portfolio of Sana Shaju, a Full Stack Developer from Irinjalakuda, Thrissur, India. Expert in Node.js, Express, React, Next.js, and scaling secure backend systems.",
+    "Portfolio of Sana Illikkal, a Full Stack Developer from Kerala, India. Specializing in MERN stack, Next.js 15, scalable backend systems, and performance-driven web applications.",
   keywords: [
+    "Sana Illikkal",
     "Sana Shaju",
-    "Full Stack Developer",
-    "Full Stack Development",
-    "MERN Stack",
-    "Next.js",
-    "React",
-    "Node.js",
-    "TypeScript",
-    "Web Development",
-    "Thrissur",
-    "Kerala",
-    "Software Engineer",
+    "Full Stack Developer India",
+    "Backend Developer Kerala",
+    "MERN Stack Developer",
+    "Next.js Developer",
+    "Node.js Expert",
+    "TypeScript Developer",
+    "React.js Developer",
+    "Web Development Thrissur",
+    "Software Engineer Portfolio",
+    "Scalable Web Applications",
+    "Irinjalakuda Developer",
   ],
-  authors: [{ name: "Sana Shaju", url: "https://github.com/sanashaju" }],
-  creator: "Sana Shaju",
-  publisher: "Sana Shaju",
+  authors: [{ name: "Sana Illikkal", url: "https://github.com/sanashaju" }],
+  creator: "Sana Illikkal",
+  publisher: "Sana Illikkal",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-domain.com", // Recommendation: update this to your actual domain
-    title: "Sana Shaju - Full Stack Developer Portfolio",
+    url: "https://sanaillikkal.in",
+    title: "Sana Illikkal - Full Stack Developer | Engineering Reliable Web Systems",
     description:
-      "Explore the projects and skills of Sana Shaju. Specializing in scalable backend systems and modern frontend interfaces.",
-    siteName: "Sana Shaju Portfolio",
+      "Crafting high-performance digital solutions with MERN stack and Next.js. Explore the portfolio of Sana Illikkal.",
+    siteName: "Sana Illikkal Portfolio",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/sana 1.jpeg", // Using the actual profile image for better personal branding on share
         width: 1200,
         height: 630,
-        alt: "Sana Shaju Portfolio",
+        alt: "Sana Illikkal - Full Stack Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sana Shaju - Full Stack Developer",
+    title: "Sana Illikkal - Full Stack Developer",
     description:
-      "Explore the projects and skills of Sana Shaju. Specializing in scalable backend systems and modern frontend interfaces.",
-    creator: "@sanashaju  ",
-    images: ["/twitter-image.png"],
+      "Full Stack Developer specializing in scalable MERN stack applications. Check out my latest work.",
+    creator: "@sanashaju",
+    images: ["/sana 1.jpeg"],
   },
   robots: {
     index: true,
@@ -74,7 +78,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code", // Note: You might want to update this too
+    google: "your-google-verification-code",
   },
 };
 
@@ -105,12 +109,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Sana Shaju",
-              url: "https://your-domain.com",
+              name: "Sana Illikkal",
+              url: "https://sanaillikkal.in",
               jobTitle: "Full Stack Developer",
               description:
                 "Full Stack Developer specializing in Node.js, Express, and scalable backend architectures.",
-              image: "https://your-domain.com/profile-image.jpg",
+              image: "https://sanaillikkal.in/sana 1.jpeg",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Irinjalakuda, Thrissur",
@@ -129,11 +133,9 @@ export default function RootLayout({
                 "MongoDB",
                 "Redis",
                 "Tailwind CSS",
-                "Render",
-                "Railway",
-                "Swagger",
-                "PowerShell",
+                "AWS",
                 "Docker",
+                "System Design",
               ],
               sameAs: [
                 "https://github.com/sanashaju",

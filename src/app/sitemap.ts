@@ -3,28 +3,12 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://your-portfolio.com",
+      url: "https://sanaillikkal.in",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "daily",
       priority: 1,
     },
-    {
-      url: "https://your-portfolio.com/projects",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://your-portfolio.com/about",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://your-portfolio.com/contact",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.5,
-    },
+    // Since this is a single-page portfolio, we maximize indexing on the root.
+    // If you add a blog or separate project pages later, they should be added here.
   ];
 }

@@ -364,7 +364,7 @@ This project is licensed under the ISC License. See the [LICENSE](LICENSE) file 
 - 🐙 GitHub: [@sanashaju](https://github.com/sanashaju)
 - 💻 LeetCode: [@sanashaju](https://leetcode.com/u/sanaillikkal)
 - 📱 Phone: +91 77367 09420
-<!-- - 📄 Resume: [View Resume](https://drive.google.com/file/d/1lf2eQpjK10k9CFMpI7HCLGmskxRb3hdT/view?usp=sharing) -->
+- 📄 Resume: [View Resume](https://drive.google.com/file/d/1vUgWcsi_2zZP4uVajwEb9r6zzIQdm8b0/view?usp=drive_link)
 
 **Project Link:** [https://github.com/sanashaju/my-portfolio-nextjs](https://github.com/sanashaju/my-portfolio-nextjs)
 

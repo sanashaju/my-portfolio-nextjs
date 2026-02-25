@@ -150,14 +150,14 @@ const Header = () => {
               availability
             </p>
             <p className="font-semibold">
-              Open to remote collabs · 9:00 AM - 7:00 PM IST
+              Open to Job Opportunities & Freelance Projects.
             </p>
           </div>
           <div className="contact-card">
             <p className="text-blue-500 uppercase tracking-[0.3em] text-[0.6rem] mb-1">
               speciality
             </p>
-            <p className="font-semibold">Backend systems & secure APIs</p>
+            <p className="font-semibold">Scalable Architectures & Full Stack Solutions</p>
           </div>
           <div className="contact-card">
             <p className="text-blue-500 uppercase tracking-[0.3em] text-[0.6rem] mb-1">
