@@ -73,8 +73,8 @@ export const SKILLS = {
 export const PROJECTS = [
   {
     id: 1,
-    name: "node-rest-api-typescript",
-    category: "BACKEND",
+    name: "Modern-Portfolio",
+    category: "FRONTEND",
     description:
       "**Problem:** Traditional APIs often suffer from performance bottlenecks and weak type safety.\n**Impact:** This leads to fragile codebases and poor developer experience.\n**Solution:** A scalable Node.js REST API built with TypeScript, featuring JWT-based authentication, MongoDB for data persistence, and Redis for caching. Dockerized for consistent deployment.",
     tech: ["Node.js", "TypeScript", "JWT", "Redis", "Docker", "MongoDB"],
@@ -85,6 +85,30 @@ export const PROJECTS = [
   },
   {
     id: 2,
+    name: "RoyalEssence E-commerce",
+    category: "Full Stack",
+    description:
+      "**Problem:** Many perfume shop websites lack a premium feel and smooth user experience.\n**Impact:** High bounce rates and low customer trust in luxury niche markets.\n**Solution:** RoyalEssence is a luxury perfume e-commerce platform. Features include wishlist management, seamless cart experience, and robust admin product management.",
+    tech: ["Node.js", "JavaScript", "Bootstrap 5", "Handlebars", "Express.js", "MongoDB"],
+    link: "https://royal-essence.onrender.com/",
+    github: "https://github.com/sanashaju/RoyalEssence-Ecommerce-Platform",
+    image: "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
+    color: "#00FF94",
+  },
+  {
+    id: 3,
+    name: "RoyalEssence E-commerce",
+    category: "Full Stack",
+    description:
+      "**Problem:** Many perfume shop websites lack a premium feel and smooth user experience.\n**Impact:** High bounce rates and low customer trust in luxury niche markets.\n**Solution:** RoyalEssence is a luxury perfume e-commerce platform. Features include wishlist management, seamless cart experience, and robust admin product management.",
+    tech: ["Node.js", "JavaScript", "Bootstrap 5", "Handlebars", "Express.js", "MongoDB"],
+    link: "https://royal-essence.onrender.com/",
+    github: "https://github.com/sanashaju/RoyalEssence-Ecommerce-Platform",
+    image: "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
+    color: "#00FF94",
+  },
+  {
+    id: 4,
     name: "RoyalEssence E-commerce",
     category: "Full Stack",
     description:
