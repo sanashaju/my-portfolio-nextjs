@@ -7,11 +7,10 @@ export const ABOUT_ME = {
   location: "Irinjalakuda, Thrissur, Kerala, India",
   email: "sanashajuillikkal@gmail.com",
   description: [
-    "Hi, I’m Sana Illikkal, a full stack developer with a strong focus on building reliable, scalable, and secure server-side applications. I enjoy solving complex problems and turning ideas into efficient APIs and systems.",
-    "I’m passionate about developing secure authentication flows, robust RESTful APIs, and intelligent data-driven applications. I enjoy crafting backend systems that are scalable, maintainable, and built with clean, modern architecture.",
+    "Hi, I'm Sana Illikkal, a Full Stack Developer specializing in building robust, scalable, and secure web applications. With expertise across frontend and backend development, I craft intuitive user interfaces and engineer efficient APIs to deliver high-performance digital solutions that solve real-world problems.",
   ],
   profileImage: "/sana 1.jpeg", // Restore original image
-  profileGif: "/profile-gif.gif", // Replace with your personalised gif
+  profileGif: "/sana-animated.webp", // Replace with your personalised gif
 };
 
 export const USER_NAMES = {
@@ -29,8 +28,8 @@ export const SOCIAL_LINKS = {
   instagram: "",
   email: "mailto:sanashajuillikkal@gmail.com",
   // blog: "https://yourblog.com", // remove if you don't have a blog
-  // resume:
-  //   "https://drive.google.com/file/d/1lf2eQpjK10k9CFMpI7HCLGmskxRb3hdT/view?usp=sharing",
+  resume:
+    "https://drive.google.com/file/d/1vUgWcsi_2zZP4uVajwEb9r6zzIQdm8b0/view?usp=drive_link",
   phone: "+91 77367 09420",
   whatsapp: "https://wa.me/ 77367 09420",
 };
@@ -76,34 +75,34 @@ export const PROJECTS = [
     name: "Modern-Portfolio",
     category: "FRONTEND",
     description:
-      "**Problem:** Traditional APIs often suffer from performance bottlenecks and weak type safety.\n**Impact:** This leads to fragile codebases and poor developer experience.\n**Solution:** A scalable Node.js REST API built with TypeScript, featuring JWT-based authentication, MongoDB for data persistence, and Redis for caching. Dockerized for consistent deployment.",
-    tech: ["Node.js", "TypeScript", "JWT", "Redis", "Docker", "MongoDB"],
+      "Crafted a responsive 9-section portfolio using Next.js 15, TypeScript, and Framer Motion with dark mode support.\nIntegrated GitHub and Leetcode APIs displaying 261+ solved problems and 64-day max streak.\nAchieved 90+ Lighthouse score via SEO, code splitting, and Open Graph meta tags.\nEnsured code quality with ESLint, Prettier, and Vercel Analytics.",
+    tech: ["Next.js 15", "TypeScript", "Framer Motion", "Tailwind CSS", "GitHub API", "LeetCode API"],
     link: "",
-    github: "https://github.com/sanashaju/node-rest-api-typescript",
+    github: "https://github.com/sanashaju/my-portfolio-nextjs",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
     color: "#3178C6",
   },
   {
     id: 2,
-    name: "RoyalEssence E-commerce",
-    category: "Full Stack",
+    name: "React-TS-Personal-Portfolio ",
+    category: "Frontend",
     description:
-      "**Problem:** Many perfume shop websites lack a premium feel and smooth user experience.\n**Impact:** High bounce rates and low customer trust in luxury niche markets.\n**Solution:** RoyalEssence is a luxury perfume e-commerce platform. Features include wishlist management, seamless cart experience, and robust admin product management.",
-    tech: ["Node.js", "JavaScript", "Bootstrap 5", "Handlebars", "Express.js", "MongoDB"],
-    link: "https://royal-essence.onrender.com/",
-    github: "https://github.com/sanashaju/RoyalEssence-Ecommerce-Platform",
+      "Built responsive portfolio with React, TypeScript, Tailwind CSS, and Framer Motion animations.\nImproved performance by 60% via code splitting and lazy loading with Vite.\nIncreased discoverability by 75% through SEO optimization and Vercel deployment.\nEnhanced user experience with Framer Motion animations achieving 95% mobile compatibility.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite", "Vercel"],
+    link: "",
+    github: "https://github.com/sanashaju/React-TS-Personal-Portfolio",
     image: "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
     color: "#00FF94",
   },
   {
     id: 3,
-    name: "RoyalEssence E-commerce",
-    category: "Full Stack",
+    name: "Node-Mongoose-JWT-APIs-TS",
+    category: "Backend",
     description:
-      "**Problem:** Many perfume shop websites lack a premium feel and smooth user experience.\n**Impact:** High bounce rates and low customer trust in luxury niche markets.\n**Solution:** RoyalEssence is a luxury perfume e-commerce platform. Features include wishlist management, seamless cart experience, and robust admin product management.",
-    tech: ["Node.js", "JavaScript", "Bootstrap 5", "Handlebars", "Express.js", "MongoDB"],
-    link: "https://royal-essence.onrender.com/",
-    github: "https://github.com/sanashaju/RoyalEssence-Ecommerce-Platform",
+      "Implemented production REST API using Node.js, TypeScript, MongoDB, Redis, and Docker.\nImproved performance by 50% via configured Redis caching for frequent data operations.\nSecured endpoints with JWT authentication, reducing security vulnerabilities by 80%.\nEstablished Jest testing suite achieving 90% code coverage for core API modules.",
+    tech: ["Node.js", "TypeScript", "MongoDB", "Redis", "Docker", "JWT", "Jest"],
+    link: "",
+    github: "https://github.com/sanashaju/node-rest-api-typescript",
     image: "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
     color: "#00FF94",
   },
@@ -112,8 +111,8 @@ export const PROJECTS = [
     name: "RoyalEssence E-commerce",
     category: "Full Stack",
     description:
-      "**Problem:** Many perfume shop websites lack a premium feel and smooth user experience.\n**Impact:** High bounce rates and low customer trust in luxury niche markets.\n**Solution:** RoyalEssence is a luxury perfume e-commerce platform. Features include wishlist management, seamless cart experience, and robust admin product management.",
-    tech: ["Node.js", "JavaScript", "Bootstrap 5", "Handlebars", "Express.js", "MongoDB"],
+      "Constructed a full-stack e-commerce platform managing 100+ products using Node.js, Express.js, MongoDB, and MVC architecture.\nIntegrated JWT authentication with cart, wishlist, and order tracking features.\nArchitected an admin dashboard with product/user management and real-time Chart.js analytics.\nAdded soft delete, user blocking, and order management, cutting admin workload by 40%.",
+    tech: ["Node.js", "Express.js", "MongoDB", "Handlebars", "Chart.js", "Bootstrap 5", "JWT"],
     link: "https://royal-essence.onrender.com/",
     github: "https://github.com/sanashaju/RoyalEssence-Ecommerce-Platform",
     image: "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
