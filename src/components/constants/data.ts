@@ -7,7 +7,8 @@ export const ABOUT_ME = {
   location: "Irinjalakuda, Thrissur, Kerala, India",
   email: "sanashajuillikkal@gmail.com",
   description: [
-    "Hi, I'm Sana Illikkal, a Full Stack Developer specializing in building robust, scalable, and secure web applications. With expertise across frontend and backend development, I craft intuitive user interfaces and engineer efficient APIs to deliver high-performance digital solutions that solve real-world problems.",
+    "Hi, I'm Sana Illikkal (Shaju), a Full Stack Developer specializing in the MERN stack—building robust, scalable, and secure web applications. With a deep focus on backend engineering and high-performance frontend interfaces, I transform complex ideas into intuitive digital products.",
+    "Driven by clean architecture and user-centric design, I have a proven track record in engineering efficient APIs, optimizing performance, and delivering production-ready solutions using React.js, Next.js, Node.js, and TypeScript. I am committed to solving real-world challenges with elegant code and continuous innovation.",
   ],
   profileImage: "/sana 1.jpeg", // Restore original image
   profileGif: "/sana-animated.webp", // Replace with your personalised gif
