@@ -21,9 +21,9 @@ export const USER_NAMES = {
 
 export const SOCIAL_LINKS = {
   github: "https://github.com/sanashaju",
-  linkedin: "https://www.linkedin.com/in/sanashaju/",
+  linkedin: "https://linkedin.com/in/sanashaju",
   // twitter: "https://twitter.com/your-twitter",
-  leetcode: "https://leetcode.com/u/sanaillikkal/",
+  leetcode: "https://leetcode.com/u/sanaillikkal",
   // peerlist: "https://peerlist.io/your-peerlist", // remove or keep blank if you don't have a Peerlist profile
   instagram: "",
   email: "mailto:sanashajuillikkal@gmail.com",
@@ -31,7 +31,7 @@ export const SOCIAL_LINKS = {
   resume:
     "https://drive.google.com/file/d/1vUgWcsi_2zZP4uVajwEb9r6zzIQdm8b0/view?usp=drive_link",
   phone: "+91 77367 09420",
-  whatsapp: "https://wa.me/ 77367 09420",
+  whatsapp: "https://wa.me/+917736709420",
 };
 
 // Contact form endpoint (update with your own Formspree endpoint)
@@ -164,13 +164,13 @@ export const PROJECTS = [
 
 export const EXPERIENCE = [
   {
-    company: "G-Tec Computer Education",
+    company: "G-Tec Education, Irinjalakuda",
     companyLink: "https://gtecirinjalakuda.com/",
     role: "Full Stack Development Intern",
-    period: "Jul 2025 - Feb 2026 (Expected)",
+    period: "Jul 2025 - March 2026",
     location: "Onsite",
     description:
-      "Working on full-stack development with a focus on backend engineering. Building secure RESTful APIs, implementing caching and session management with Redis, designing scalable architectures, and integrating relational and NoSQL databases. Gaining hands-on experience with containerization, API performance optimization, and modern JavaScript development workflows.",
+      "Engineered and deployed full-stack MERN applications with a strong focus on performance and security, achieving a 30% reduction in load times through lazy loading and component optimization. Implemented JWT authentication and role-based access control across 140+ REST APIs using Node.js, Express.js, NestJS, and TypeScript, ensuring zero unauthorized access. Optimized MongoDB and PostgreSQL database schemas through advanced indexing strategies and query optimization, improving query performance by 40%. Containerized and deployed applications using Docker, AWS S3, and AWS Cognito, delivering 99.9% uptime, 50% faster deployments, and maintaining 85%+ Jest test coverage throughout the development lifecycle.",
     skills: [
       "Node.js",
       "Express.js",
@@ -193,7 +193,7 @@ export const EDUCATION = [
     degree: "Bachelor of Computer Science (B.CS).",
     institution: " Nirmala College Of Arts And Science, Meloor,Chalakudy",
     institutionLink: "https://ncas.nirmalacollege.edu.in/",
-    period: "Jul 2021 - Jul 2024 ",
+    period: "Aug 2021 - Mar 2024",
   },
   {
     degree: "Senior Secondary (Plus Two) ",
