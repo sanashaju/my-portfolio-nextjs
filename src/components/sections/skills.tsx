@@ -2,81 +2,82 @@ import { SKILLS } from "@/components/constants/data";
 import Image from "next/image";
 
 const SKILL_ICONS: Record<string, string> = {
-  HTML: "html",
-  CSS: "css",
-  JavaScript: "js",
+  // Languages
+  "JavaScript (ES6+)": "js",
   TypeScript: "ts",
-  React: "react",
+  HTML5: "html",
+  CSS3: "css",
+  SQL: "mysql",
+
+  // Frontend
+  "React.js": "react",
   "Next.js": "nextjs",
-  "Vue.js": "vue",
-  Angular: "angular",
   Redux: "redux",
+  "Redux Toolkit": "redux",
+  jQuery: "jquery",
   "Tailwind CSS": "tailwind",
   Bootstrap: "bootstrap",
-  Sass: "sass",
-  Less: "less",
-  jQuery: "jquery",
+  "Framer Motion": "framermotion",
+
+  // Backend
   "Node.js": "nodejs",
   "Express.js": "express",
   "Nest.js": "nestjs",
-  Prisma: "prisma",
-  Django: "django",
-  Flask: "flask",
-  "Spring Boot": "spring",
-  "Ruby on Rails": "rails",
-  Laravel: "laravel",
-  "ASP.NET": "dotnet",
-  FastAPI: "fastapi",
+  "RESTful APIs": "",
+  JWT: "",
+  WebSocket: "",
+  GraphQL: "graphql",
+  "Socket.io": "socketio",
+
+  // Databases
   MongoDB: "mongodb",
-  MySQL: "mysql",
   PostgreSQL: "postgresql",
-  SQLite: "sqlite",
   Redis: "redis",
-  Firebase: "firebase",
-  Supabase: "supabase",
-  C: "c",
-  "C++": "cpp",
-  "C#": "cs",
-  Java: "java",
-  Python: "py",
-  Go: "go",
-  Rust: "rust",
-  Ruby: "ruby",
-  PHP: "php",
-  Kotlin: "kotlin",
-  Swift: "swift",
-  Dart: "dart",
-  Scala: "scala",
-  AWS: "aws",
-  Azure: "azure",
-  GCP: "gcp",
+  "Mongoose ODM": "mongodb",
+  "Prisma ORM": "prisma",
+
+  // Cloud & DevOps
+  "AWS (Lambda, API Gateway, EC2, S3)": "aws",
   Docker: "docker",
-  Kubernetes: "kubernetes",
+  Nginx: "nginx",
+  "CI/CD": "",
+  "GitHub Actions": "githubactions",
   Vercel: "vercel",
   Render: "render",
-  Railway: "railway",
-  Netlify: "netlify",
-  Heroku: "heroku",
-  "GitHub Actions": "githubactions",
-  Jenkins: "jenkins",
-  "VS Code": "vscode",
-  Cursor: "cursor",
-  Git: "git",
-  GitHub: "github",
-  GitLab: "gitlab",
-  Bitbucket: "bitbucket",
-  Postman: "postman",
-  Swagger: "swagger",
-  PowerShell: "powershell",
-  Figma: "figma",
-  Vite: "vite",
-  Webpack: "webpack",
-  Babel: "babel",
+  PM2: "",
+  "Linux/Bash": "linux",
+
+  // Testing
   Jest: "jest",
-  Cypress: "cypress",
-  Linux: "linux",
-  Windows: "windows",
-  MacOS: "apple",
+  Playwright: "playwright",
+  Postman: "postman",
+  Supertest: "",
+
+  // Tools
+  Git: "git",
+  Swagger: "swagger",
+  Figma: "figma",
+  "Adobe Photoshop": "photoshop",
+  Vite: "vite",
+  "VS Code": "vscode",
+  Jira: "jira",
+  Notion: "notion",
+  ESLint: "eslint",
+  Prettier: "prettier",
+  npm: "npm",
+  yarn: "yarn",
+  pnpm: "pnpm",
+
+  // Architecture & Concepts (no icons)
+  MVC: "",
+  "SOLID Principles": "",
+  OOP: "",
+  "Design Patterns": "",
+  "Agile/Scrum": "",
+  "System Design": "",
+  "API Rate Limiting": "",
+  "Load Balancing": "",
+  "Data Structures & Algorithms": "",
 };
 
 const SkillBadge = ({ skill }: { skill: string }) => {
@@ -84,9 +85,25 @@ const SkillBadge = ({ skill }: { skill: string }) => {
   if (!iconSlug) return <span className="skill-chip">{skill}</span>;
 
   // Icons known to be missing in skillicons.dev but available in simpleicons.org
-  const isSimpleIcon = ["render", "railway", "swagger", "cursor"].includes(iconSlug);
-  
-  const iconUrl = isSimpleIcon 
+  const isSimpleIcon = [
+  "render",
+  "swagger",
+  "nginx",
+  "notion",
+  "prettier",
+  "jira",
+  "eslint",
+  "socketio",
+  "framermotion",
+  "playwright",
+  "graphql",
+  "pnpm",
+  "yarn",
+  "npm",
+  "photoshop",
+].includes(iconSlug);
+
+  const iconUrl = isSimpleIcon
     ? `https://cdn.simpleicons.org/${iconSlug}` // branded colors
     : `https://skillicons.dev/icons?i=${iconSlug}`;
 
