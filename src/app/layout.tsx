@@ -12,6 +12,7 @@ const outfit = Outfit({
   preload: true,
 });
 
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://sanaillikkal.in"),
   title: {
@@ -115,6 +116,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link rel="preconnect" href="https://skillicons.dev" />
+
+        {/* Apple Touch Icon - using the professional image */}
+        <link rel="apple-touch-icon" href="/sana 1.jpeg" />
 
         {/* Apple Touch Icon - using the professional image */}
         <link rel="apple-touch-icon" href="/sana 1.jpeg" />

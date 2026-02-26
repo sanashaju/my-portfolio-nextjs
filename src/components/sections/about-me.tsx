@@ -74,7 +74,7 @@ export default function AboutMe() {
   return (
     <section id="about" ref={sectionRef} className="pb-12 space-y-6">
       <div className="flex flex-col gap-2">
-        <h2 className="section-title">About.</h2>
+        <h2 className="section-title w-full">About.</h2>
       </div>
 
       <div className="space-y-10">

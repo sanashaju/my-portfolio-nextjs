@@ -134,7 +134,7 @@ const Contact = () => {
   return (
     <section className="py-6 space-y-8">
       <div className="flex flex-col gap-3">
-        <h2 className="section-title">Let&apos;s Connect.</h2>
+        <h2 className="section-title w-full">Let&apos;s Connect.</h2>
         <p className="text-sm text-muted-foreground/80 max-w-lg leading-relaxed font-light">
           Whether you have a project in mind or just want to say hi, my inbox is
           always open.
@@ -146,7 +146,7 @@ const Contact = () => {
           <div className="glass-panel p-4 sm:p-6 md:p-8 relative overflow-hidden group">
             <div className="relative z-10">
               {/* Ultra-compact Header */}
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-foreground/5 pb-2 mb-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/20 pb-2 mb-3">
                 <div className="flex items-center gap-2">
                   <h3 className="text-xs font-bold tracking-tight uppercase opacity-40">
                     Network
@@ -209,7 +209,7 @@ const Contact = () => {
         <div className="flex flex-col gap-6 mt-2 md:mt-0">
           <div className="glass-panel p-4 sm:p-6 md:p-8 space-y-3 relative overflow-hidden">
             {/* Ultra-compact Header */}
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-foreground/5 pb-2 mb-3">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/20 pb-2 mb-3">
               <div className="flex items-center gap-2">
                 <h3 className="text-xs font-bold tracking-tight uppercase opacity-40">
                   Direct
@@ -231,7 +231,7 @@ const Contact = () => {
                   className="group/copy relative cursor-pointer"
                 >
                   <div className="absolute -inset-[1px] bg-gradient-to-r from-accent/50 to-accent-secondary/50 rounded-2xl blur opacity-20 group-hover/copy:opacity-40 transition duration-500" />
-                  <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5 bg-background border border-foreground/5 rounded-2xl transition-all duration-300 hover:border-accent/40 group-hover/copy:bg-foreground/[0.01]">
+                  <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5 bg-background border border-border/20 rounded-2xl transition-all duration-300 hover:border-accent/40 group-hover/copy:bg-foreground/[0.01]">
                     <div className="flex items-center gap-3 sm:gap-4 min-w-0">
                       <Mail className="w-5 h-5 shrink-0 text-accent/60 group-hover/copy:text-accent transition-colors" />
                       <span className="font-mono text-xs sm:text-sm tracking-tight text-foreground/80 group-hover/copy:text-foreground transition-colors truncate">

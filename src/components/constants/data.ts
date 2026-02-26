@@ -30,7 +30,7 @@ export const SOCIAL_LINKS = {
   email: "mailto:sanashajuillikkal@gmail.com",
   // blog: "https://yourblog.com", // remove if you don't have a blog
   resume:
-    "https://drive.google.com/file/d/1XHXTeslX8WEoEXkLeSSpaD4A60zvNezP/view?usp=sharing",
+    "https://drive.google.com/file/d/1P1jCvcDSaLbvcJLkIRzmuIJrDIVeWggs/view?usp=sharing",
   phone: "+91 77367 09420",
   whatsapp: "https://wa.me/+917736709420",
 };
@@ -134,7 +134,7 @@ export const PROJECTS = [
       "Vercel",
     ],
     link: "",
-    github: "https://github.com/sanashaju/React-TS-Personal-Portfolio",
+    github: "https://github.com/sanashaju/My-Portfolio-React-TS",
     image:
       "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
     color: "#00FF94",
@@ -155,7 +155,7 @@ export const PROJECTS = [
       "Jest",
     ],
     link: "",
-    github: "https://github.com/sanashaju/node-rest-api-typescript",
+    github: "https://github.com/sanashaju/node-rest-api-ts",
     image:
       "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
     color: "#00FF94",

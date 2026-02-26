@@ -105,7 +105,7 @@ export default function Github() {
   return (
     <section className="py-6 space-y-4" id="github">
       <div className="flex flex-col gap-2">
-        <h2 className="section-title">github.</h2>
+        <h2 className="section-title w-full">github.</h2>
         <p className="text-sm text-muted-foreground">
           Building in public – contributions, experiments, and playful repos.
         </p>
