@@ -289,7 +289,7 @@
     content: "";
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, hsl(var(--border-hover)), transparent);
+    background: linear-gradient(90deg, hsl(var(--border)), transparent);
     opacity: 0.5;
   }
 

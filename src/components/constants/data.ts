@@ -134,7 +134,7 @@ export const PROJECTS = [
       "Vercel",
     ],
     link: "",
-    github: "https://github.com/sanashaju/React-TS-Personal-Portfolio",
+    github: "https://github.com/sanashaju/My-Portfolio-React-TS",
     image:
       "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
     color: "#00FF94",
@@ -155,7 +155,7 @@ export const PROJECTS = [
       "Jest",
     ],
     link: "",
-    github: "https://github.com/sanashaju/node-rest-api-typescript",
+    github: "https://github.com/sanashaju/node-rest-api-ts",
     image:
       "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
     color: "#00FF94",
