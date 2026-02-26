@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     description:
       "Full Stack Developer specializing in scalable MERN stack applications. Check out my latest work and experience.",
     creator: "@sanashaju",
-    images: ["/og-image.png"],
+    images: ["/sana 1.jpeg"],
   },
   robots: {
     index: true,
