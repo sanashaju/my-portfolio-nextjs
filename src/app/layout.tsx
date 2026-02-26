@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     description:
       "Full Stack Developer specializing in scalable MERN stack applications. Check out my latest work and experience.",
     creator: "@sanashaju",
-    images: ["/sana 1.jpeg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -118,6 +118,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link rel="preconnect" href="https://skillicons.dev" />
+        
+        {/* Apple Touch Icon - using the professional image */}
+        <link rel="apple-touch-icon" href="/sana 1.jpeg" />
 
         {/* Apple Touch Icon - using the professional image */}
         <link rel="apple-touch-icon" href="/sana 1.jpeg" />
