@@ -12,6 +12,7 @@ const outfit = Outfit({
   preload: true,
 });
 
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://sanaillikkal.in"),
   title: {
