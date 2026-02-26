@@ -6,7 +6,7 @@ import { ChevronDown, Mail, FileText } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
-import confetti from "canvas-confetti";
+
 import { ABOUT_ME, SOCIAL_LINKS } from "@/components/constants/data";
 import { TerminalWindow } from "@/components/ui/TerminalWindow";
 import { AboutTerminal } from "@/components/ui/AboutTerminal";
@@ -137,78 +137,9 @@ export default function AboutMe() {
           ).map((btn) => {
             const href = btn.href.trim();
             const isExternal = href.startsWith("http");
-            const isEmail = btn.label === "Email";
-            const isSpecial =
-              (href.startsWith("mailto:") || href.startsWith("tel:")) &&
-              !isEmail;
-
             const baseClass = `inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/20 px-4 py-2 text-sm font-medium text-foreground/80 tracking-wide transition-all hover:border-accent hover:text-accent hover:shadow-[0_0_20px_rgba(var(--accent),0.2)] hover:-translate-y-1 ${btn.className || ""}`;
 
-            const handleEmailClick = async (e: React.MouseEvent) => {
-              e.preventDefault();
-              try {
-                const email = href.replace("mailto:", "");
-
-                if (navigator.clipboard && window.isSecureContext) {
-                  await navigator.clipboard.writeText(email);
-                } else {
-                  // Fallback
-                  const textArea = document.createElement("textarea");
-                  textArea.value = email;
-                  textArea.style.position = "fixed";
-                  textArea.style.left = "-999999px";
-                  textArea.style.top = "-999999px";
-                  document.body.appendChild(textArea);
-                  textArea.focus();
-                  textArea.select();
-                  try {
-                    document.execCommand("copy");
-                  } catch (err) {
-                    console.error("Fallback: Oops, unable to copy", err);
-                  }
-                  document.body.removeChild(textArea);
-                }
-
-                // Trigger Theme-Complementary Confetti
-                const fire = (confetti as any).default || confetti;
-                if (typeof fire === "function") {
-                  fire({
-                    particleCount: 150,
-                    spread: 80,
-                    origin: { y: 0.7 },
-                    colors: [
-                      "#A855F7",
-                      "#a221b6ff",
-                      "#8B5CF6",
-                      "#301050ff",
-                      "#FFFFFF",
-                    ],
-                    ticks: 200,
-                    gravity: 1.2,
-                    decay: 0.94,
-                    startVelocity: 30,
-                    shapes: ["circle", "square"],
-                    zIndex: 9999,
-                  });
-                }
-              } catch (err) {
-                // Fallback to mailto if copy fails completely
-                window.location.href = href;
-              }
-            };
-
-            if (isEmail) {
-              return (
-                <button
-                  key={btn.label}
-                  onClick={handleEmailClick}
-                  className={baseClass}
-                  aria-label="Copy Email"
-                >
-                  {btn.icon}
-                </button>
-              );
-            }
+            const isSpecial = href.startsWith("mailto:") || href.startsWith("tel:");
 
             if (isExternal) {
               return (
