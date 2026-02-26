@@ -17,7 +17,7 @@ const SKILL_ICONS: Record<string, string> = {
   jQuery: "jquery",
   "Tailwind CSS": "tailwind",
   Bootstrap: "bootstrap",
-  "Framer Motion": "framermotion",
+  "Framer Motion": "framer",
 
   // Backend
   "Node.js": "nodejs",
@@ -27,7 +27,7 @@ const SKILL_ICONS: Record<string, string> = {
   JWT: "",
   WebSocket: "",
   GraphQL: "graphql",
-  "Socket.io": "socketio",
+  "Socket.io": "socketdotio",
 
   // Databases
   MongoDB: "mongodb",
@@ -37,7 +37,7 @@ const SKILL_ICONS: Record<string, string> = {
   "Prisma ORM": "prisma",
 
   // Cloud & DevOps
-  "AWS (Lambda, API Gateway, EC2, S3)": "aws",
+  "AWS": "aws",
   Docker: "docker",
   Nginx: "nginx",
   "CI/CD": "",
@@ -57,7 +57,8 @@ const SKILL_ICONS: Record<string, string> = {
   Git: "git",
   Swagger: "swagger",
   Figma: "figma",
-  "Adobe Photoshop": "photoshop",
+  "Adobe Photoshop": "adobephotoshop",
+  "Cursor": "cursor",
   Vite: "vite",
   "VS Code": "vscode",
   Jira: "jira",
@@ -93,14 +94,11 @@ const SkillBadge = ({ skill }: { skill: string }) => {
   "prettier",
   "jira",
   "eslint",
-  "socketio",
-  "framermotion",
-  "playwright",
+  "socketdotio",
+  "framer",
   "graphql",
-  "pnpm",
-  "yarn",
-  "npm",
-  "photoshop",
+  "adobephotoshop",
+  "cursor",
 ].includes(iconSlug);
 
   const iconUrl = isSimpleIcon

@@ -70,7 +70,7 @@ export const SKILLS = {
     "Prisma ORM",
   ],
   cloudDevOps: [
-    "AWS (Lambda, API Gateway, EC2, S3)",
+    "AWS",
     "Docker",
     "Nginx",
     "CI/CD",
@@ -98,6 +98,9 @@ export const SKILLS = {
     "ESLint",
     "Prettier",
     "Vite",
+    "npm",
+    "yarn",
+    "pnpm",
   ],
   "architecture Concepts": [
     "MVC",
