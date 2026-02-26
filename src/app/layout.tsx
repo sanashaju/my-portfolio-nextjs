@@ -123,6 +123,12 @@ export default function RootLayout({
         {/* Apple Touch Icon - using the professional image */}
         <link rel="apple-touch-icon" href="/sana 1.jpeg" />
 
+        {/* Apple Touch Icon - using the professional image */}
+        <link rel="apple-touch-icon" href="/sana 1.jpeg" />
+
+        {/* Apple Touch Icon - using the professional image */}
+        <link rel="apple-touch-icon" href="/sana 1.jpeg" />
+
         {/* Structured Data: Combining Person, ProfessionalService, and WebSite schemas */}
         <script
           type="application/ld+json"
