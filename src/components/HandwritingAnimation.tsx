@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Dancing_Script } from 'next/font/google';
+import { motion } from "framer-motion";
+import { Dancing_Script } from "next/font/google";
 
 // Font configuration
-const dancingScript = Dancing_Script({ 
-  subsets: ['latin'],
-  weight: ['400', '700'] 
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 interface Props {
@@ -16,7 +16,9 @@ interface Props {
 
 export default function HandwritingAnimation({ onComplete, className }: Props) {
   return (
-    <div className={`h-screen w-full flex items-center justify-center bg-transparent ${className || ''}`}>
+    <div
+      className={`h-screen w-full flex items-center justify-center bg-transparent ${className || ""}`}
+    >
       <motion.svg
         width="100%"
         height="100%"
@@ -41,7 +43,7 @@ export default function HandwritingAnimation({ onComplete, className }: Props) {
           textAnchor="middle"
           dominantBaseline="middle"
           className={`${dancingScript.className} text-[#4facfe] font-bold`}
-          fontSize="90" 
+          fontSize="90"
           stroke="#4facfe"
           fill="#4facfe"
           strokeWidth="2"

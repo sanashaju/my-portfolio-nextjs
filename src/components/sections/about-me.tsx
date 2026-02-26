@@ -139,7 +139,8 @@ export default function AboutMe() {
             const isExternal = href.startsWith("http");
             const isEmail = btn.label === "Email";
             const isSpecial =
-              (href.startsWith("mailto:") || href.startsWith("tel:")) && !isEmail;
+              (href.startsWith("mailto:") || href.startsWith("tel:")) &&
+              !isEmail;
 
             const baseClass = `inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/20 px-4 py-2 text-sm font-medium text-foreground/80 tracking-wide transition-all hover:border-accent hover:text-accent hover:shadow-[0_0_20px_rgba(var(--accent),0.2)] hover:-translate-y-1 ${btn.className || ""}`;
 
@@ -147,7 +148,7 @@ export default function AboutMe() {
               e.preventDefault();
               try {
                 const email = href.replace("mailto:", "");
-                
+
                 if (navigator.clipboard && window.isSecureContext) {
                   await navigator.clipboard.writeText(email);
                 } else {
@@ -167,7 +168,7 @@ export default function AboutMe() {
                   }
                   document.body.removeChild(textArea);
                 }
-                
+
                 // Trigger Theme-Complementary Confetti
                 const fire = (confetti as any).default || confetti;
                 if (typeof fire === "function") {
@@ -175,7 +176,13 @@ export default function AboutMe() {
                     particleCount: 150,
                     spread: 80,
                     origin: { y: 0.7 },
-                    colors: ["#A855F7", "#a221b6ff", "#8B5CF6", "#301050ff", "#FFFFFF"],
+                    colors: [
+                      "#A855F7",
+                      "#a221b6ff",
+                      "#8B5CF6",
+                      "#301050ff",
+                      "#FFFFFF",
+                    ],
                     ticks: 200,
                     gravity: 1.2,
                     decay: 0.94,

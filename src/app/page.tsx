@@ -25,13 +25,11 @@ export default function Home() {
   return (
     <div className="font-sans min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
       <AnimatePresence mode="wait">
-        {isLoading && (
-          <BootSequence onComplete={() => setIsLoading(false)} />
-        )}
+        {isLoading && <BootSequence onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
 
       {!isLoading && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
