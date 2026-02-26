@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Sana Illikkal Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/sana 1.jpeg",
         width: 1200,
         height: 630,
         alt: "Sana Illikkal - Full Stack Developer Portfolio",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     description:
       "Full Stack Developer specializing in scalable MERN stack applications. Check out my latest work and experience.",
     creator: "@sanashaju",
-    images: ["/og-image.png"],
+    images: ["/sana 1.jpeg"],
   },
   robots: {
     index: true,
