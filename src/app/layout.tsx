@@ -95,8 +95,6 @@ export const metadata: Metadata = {
   },
 };
 
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -117,7 +115,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link rel="preconnect" href="https://skillicons.dev" />
-        
+
         {/* Apple Touch Icon - using the professional image */}
         <link rel="apple-touch-icon" href="/sana 1.jpeg" />
 
