@@ -1,14 +1,7 @@
 "use client";
 
 import { useState, MouseEvent } from "react";
-import {
-  Mail,
-  Phone,
-  Instagram,
-  Copy,
-  Check,
-  ChevronDown,
-} from "lucide-react";
+import { Mail, Phone, Instagram, Copy, Check, ChevronDown } from "lucide-react";
 import { SiLeetcode, SiWhatsapp } from "react-icons/si";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import confetti from "canvas-confetti";
@@ -91,7 +84,7 @@ const Contact = () => {
         }
         document.body.removeChild(textArea);
       }
-      
+
       setCopied(true);
 
       // Trigger Theme-Complementary Confetti
@@ -143,19 +136,21 @@ const Contact = () => {
       <div className="flex flex-col gap-3">
         <h2 className="section-title">Let&apos;s Connect.</h2>
         <p className="text-sm text-muted-foreground/80 max-w-lg leading-relaxed font-light">
-          Whether you have a project in mind or just want to say hi, my inbox is always open.
+          Whether you have a project in mind or just want to say hi, my inbox is
+          always open.
         </p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
         <div className="flex flex-col gap-6 mt-2 md:mt-0">
           <div className="glass-panel p-4 sm:p-6 md:p-8 relative overflow-hidden group">
-            
             <div className="relative z-10">
               {/* Ultra-compact Header */}
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-foreground/5 pb-2 mb-3">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-xs font-bold tracking-tight uppercase opacity-40">Network</h3>
+                  <h3 className="text-xs font-bold tracking-tight uppercase opacity-40">
+                    Network
+                  </h3>
                 </div>
               </div>
 
@@ -178,7 +173,8 @@ const Contact = () => {
                     </div>
                   );
 
-                  const linkClass = "group/link flex items-center gap-3 sm:gap-4 rounded-[2rem] border border-transparent bg-foreground/[0.02] px-4 py-3 sm:px-5 sm:py-4 text-left transition-all duration-300 hover:bg-foreground/[0.04] hover:border-foreground/10 hover:translate-x-1";
+                  const linkClass =
+                    "group/link flex items-center gap-3 sm:gap-4 rounded-[2rem] border border-transparent bg-foreground/[0.02] px-4 py-3 sm:px-5 sm:py-4 text-left transition-all duration-300 hover:bg-foreground/[0.04] hover:border-foreground/10 hover:translate-x-1";
 
                   if (item.href) {
                     const isExternal = item.href.startsWith("http");
@@ -188,7 +184,10 @@ const Contact = () => {
                         href={item.href}
                         target={isExternal ? "_blank" : undefined}
                         rel={isExternal ? "noopener noreferrer" : undefined}
-                        onClick={(event) => !isExternal && handleSpecialNavigation(event, item.href!)}
+                        onClick={(event) =>
+                          !isExternal &&
+                          handleSpecialNavigation(event, item.href!)
+                        }
                         className={linkClass}
                       >
                         {content}
@@ -209,21 +208,25 @@ const Contact = () => {
 
         <div className="flex flex-col gap-6 mt-2 md:mt-0">
           <div className="glass-panel p-4 sm:p-6 md:p-8 space-y-3 relative overflow-hidden">
-             {/* Ultra-compact Header */}
-             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-foreground/5 pb-2 mb-3">
+            {/* Ultra-compact Header */}
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-foreground/5 pb-2 mb-3">
               <div className="flex items-center gap-2">
-                <h3 className="text-xs font-bold tracking-tight uppercase opacity-40">Direct</h3>
+                <h3 className="text-xs font-bold tracking-tight uppercase opacity-40">
+                  Direct
+                </h3>
               </div>
               <div className="flex items-center gap-2">
-                 <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                 <span className="text-[9px] font-bold text-green-500 uppercase tracking-widest hidden sm:inline">Active</span>
+                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-[9px] font-bold text-green-500 uppercase tracking-widest hidden sm:inline">
+                  Active
+                </span>
               </div>
             </div>
 
             <div className="space-y-2.5 pt-0">
               {/* Refined Email Copy Area */}
               <div className="space-y-2.5">
-                <div 
+                <div
                   onClick={handleCopyEmail}
                   className="group/copy relative cursor-pointer"
                 >
@@ -235,18 +238,23 @@ const Contact = () => {
                         {emailAddress}
                       </span>
                     </div>
-                    
+
                     <button
                       type="button"
                       className={`
                         shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl font-bold font-mono text-[10px] tracking-widest uppercase transition-all duration-300
-                        ${copied 
-                          ? "bg-accent/10 text-accent border border-accent/20" 
-                          : "bg-foreground text-background hover:scale-105 active:scale-95"
+                        ${
+                          copied
+                            ? "bg-accent/10 text-accent border border-accent/20"
+                            : "bg-foreground text-background hover:scale-105 active:scale-95"
                         }
                       `}
                     >
-                      {copied ? <Check size={14} strokeWidth={3} /> : <Copy size={14} strokeWidth={3} />}
+                      {copied ? (
+                        <Check size={14} strokeWidth={3} />
+                      ) : (
+                        <Copy size={14} strokeWidth={3} />
+                      )}
                       {copied ? "COPIED" : "COPY"}
                     </button>
                   </div>
@@ -275,7 +283,9 @@ const Contact = () => {
                   </div>
                   <div className="text-left">
                     <p className="text-sm font-bold">Secure_Chat</p>
-                    <p className="text-[10px] text-green-500/60 font-mono">ENCRYPTED_LINE</p>
+                    <p className="text-[10px] text-green-500/60 font-mono">
+                      ENCRYPTED_LINE
+                    </p>
                   </div>
                 </div>
                 <div className="w-8 h-8 rounded-full border border-green-500/20 flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-all">

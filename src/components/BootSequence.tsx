@@ -83,7 +83,10 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
     addLine("INITIALIZING SYSTEM HANDSHAKE");
 
     // 1s: Line 2
-    const timer1 = setTimeout(() => addLine("VERIFYING ENCRYPTED PROTOCOLS"), 1000);
+    const timer1 = setTimeout(
+      () => addLine("VERIFYING ENCRYPTED PROTOCOLS"),
+      1000
+    );
 
     // 2s: Line 3
     const timer2 = setTimeout(() => addLine("ACQUIRING NEURAL TARGET"), 2000);
@@ -150,13 +153,18 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
                     layout
                     initial={{ opacity: 0, y: 20 }}
                     animate={{
-                      opacity: isConnectedLine ? 1 : 1 - (lines.length - 1 - i) * 0.3,
+                      opacity: isConnectedLine
+                        ? 1
+                        : 1 - (lines.length - 1 - i) * 0.3,
                       y: 0,
                     }}
                     exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
                     transition={{ duration: 0.3 }}
                     className={`flex items-center gap-3 text-sm md:text-base font-medium tracking-wider h-8 w-full ${isConnectedLine ? "justify-center mt-4" : ""}`}
-                    style={{ position: isConnectedLine ? "relative" : "static", zIndex: isConnectedLine ? 50 : 1 }}
+                    style={{
+                      position: isConnectedLine ? "relative" : "static",
+                      zIndex: isConnectedLine ? 50 : 1,
+                    }}
                   >
                     {!isConnectedLine && (
                       <>
@@ -176,7 +184,11 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
                       <div className="flex items-center gap-3">
                         <span className="text-accent font-bold text-sm md:text-base font-mono tracking-widest flex items-center gap-3">
                           <motion.span
-                            animate={phase === "COMPLETE" ? { opacity: 0, scale: 0.8 } : { opacity: 1, scale: 1 }}
+                            animate={
+                              phase === "COMPLETE"
+                                ? { opacity: 0, scale: 0.8 }
+                                : { opacity: 1, scale: 1 }
+                            }
                             transition={{ duration: 0.3 }}
                           >
                             [
@@ -185,13 +197,20 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
                           <motion.span
                             layoutId="connected-text"
                             className="shadow-accent drop-shadow-[0_0_8px_rgba(var(--accent),0.4)] inline-block"
-                            exit={{ opacity: 1, transition: { duration: 0.01 } }}
+                            exit={{
+                              opacity: 1,
+                              transition: { duration: 0.01 },
+                            }}
                           >
                             CONNECTED
                           </motion.span>
 
                           <motion.span
-                            animate={phase === "COMPLETE" ? { opacity: 0, scale: 0.8 } : { opacity: 1, scale: 1 }}
+                            animate={
+                              phase === "COMPLETE"
+                                ? { opacity: 0, scale: 0.8 }
+                                : { opacity: 1, scale: 1 }
+                            }
                             transition={{ duration: 0.3 }}
                           >
                             ]

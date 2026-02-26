@@ -39,13 +39,7 @@ export const SOCIAL_LINKS = {
 export const FORM_ENDPOINT = "https://formspree.io/f/your-form-id";
 
 export const SKILLS = {
-  languages: [
-    "JavaScript (ES6+)",
-    "TypeScript",
-    "HTML5",
-    "CSS3",
-    "SQL",
-  ],
+  languages: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "SQL"],
   frontend: [
     "React.js",
     "Next.js",
@@ -62,13 +56,7 @@ export const SKILLS = {
     "WebSocket",
     "Socket.io",
   ],
-  databases: [
-    "MongoDB",
-    "PostgreSQL",
-    "Redis",
-    "Mongoose ODM",
-    "Prisma ORM",
-  ],
+  databases: ["MongoDB", "PostgreSQL", "Redis", "Mongoose ODM", "Prisma ORM"],
   cloudDevOps: [
     "AWS",
     "Docker",
@@ -80,12 +68,7 @@ export const SKILLS = {
     "PM2",
     "Linux/Bash",
   ],
-  testing: [
-    "Jest",
-    "Playwright",
-    "Postman",
-    "Supertest",
-  ],
+  testing: ["Jest", "Playwright", "Postman", "Supertest"],
   tools: [
     "Git",
     "GitHub",
@@ -122,10 +105,18 @@ export const PROJECTS = [
     category: "FRONTEND",
     description:
       "Crafted a responsive 9-section portfolio using Next.js 15, TypeScript, and Framer Motion with dark mode support.\nIntegrated GitHub and Leetcode APIs displaying 261+ solved problems and 64-day max streak.\nAchieved 90+ Lighthouse score via SEO, code splitting, and Open Graph meta tags.\nEnsured code quality with ESLint, Prettier, and Vercel Analytics.",
-    tech: ["Next.js 15", "TypeScript", "Framer Motion", "Tailwind CSS", "GitHub API", "LeetCode API"],
+    tech: [
+      "Next.js 15",
+      "TypeScript",
+      "Framer Motion",
+      "Tailwind CSS",
+      "GitHub API",
+      "LeetCode API",
+    ],
     link: "",
     github: "https://github.com/sanashaju/my-portfolio-nextjs",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
     color: "#3178C6",
   },
   {
@@ -134,10 +125,18 @@ export const PROJECTS = [
     category: "Frontend",
     description:
       "Built responsive portfolio with React, TypeScript, Tailwind CSS, and Framer Motion animations.\nImproved performance by 60% via code splitting and lazy loading with Vite.\nIncreased discoverability by 75% through SEO optimization and Vercel deployment.\nEnhanced user experience with Framer Motion animations achieving 95% mobile compatibility.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite", "Vercel"],
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vite",
+      "Vercel",
+    ],
     link: "",
     github: "https://github.com/sanashaju/React-TS-Personal-Portfolio",
-    image: "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
     color: "#00FF94",
   },
   {
@@ -146,10 +145,19 @@ export const PROJECTS = [
     category: "Backend",
     description:
       "Implemented production REST API using Node.js, TypeScript, MongoDB, Redis, and Docker.\nImproved performance by 50% via configured Redis caching for frequent data operations.\nSecured endpoints with JWT authentication, reducing security vulnerabilities by 80%.\nEstablished Jest testing suite achieving 90% code coverage for core API modules.",
-    tech: ["Node.js", "TypeScript", "MongoDB", "Redis", "Docker", "JWT", "Jest"],
+    tech: [
+      "Node.js",
+      "TypeScript",
+      "MongoDB",
+      "Redis",
+      "Docker",
+      "JWT",
+      "Jest",
+    ],
     link: "",
     github: "https://github.com/sanashaju/node-rest-api-typescript",
-    image: "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
     color: "#00FF94",
   },
   {
@@ -158,10 +166,19 @@ export const PROJECTS = [
     category: "Full Stack",
     description:
       "Constructed a full-stack e-commerce platform managing 100+ products using Node.js, Express.js, MongoDB, and MVC architecture.\nIntegrated JWT authentication with cart, wishlist, and order tracking features.\nArchitected an admin dashboard with product/user management and real-time Chart.js analytics.\nAdded soft delete, user blocking, and order management, cutting admin workload by 40%.",
-    tech: ["Node.js", "Express.js", "MongoDB", "Handlebars", "Chart.js", "Bootstrap 5", "JWT"],
+    tech: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Handlebars",
+      "Chart.js",
+      "Bootstrap 5",
+      "JWT",
+    ],
     link: "https://royal-essence.onrender.com/",
     github: "https://github.com/sanashaju/RoyalEssence-Ecommerce-Platform",
-    image: "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
     color: "#00FF94",
   },
 ];
@@ -191,7 +208,6 @@ export const EXPERIENCE = [
   },
 ];
 
-
 export const EDUCATION = [
   {
     degree: "Bachelor of Computer Science (B.CS).",
@@ -202,13 +218,15 @@ export const EDUCATION = [
   {
     degree: "Senior Secondary (Plus Two) ",
     institution: "Govt.Model Girls Higher Secondary School, Irinjalakuda",
-    institutionLink: "https://in.worldorgs.com/catalog/irinjalakuda/high-school/government-model-girls-higher-secondary-school",
+    institutionLink:
+      "https://in.worldorgs.com/catalog/irinjalakuda/high-school/government-model-girls-higher-secondary-school",
     period: "Jul 2019 - Mar 2021",
   },
   {
     degree: "Secondary (SSLC)",
     institution: "Sreekrishna Higher Secondary School, Anandapuram",
-    institutionLink: "https://www.justdial.com/Thrissur/Sree-Krishna-Higher-Secondary-School-Near-Mahavishnu-Temple-Anandapuram/9999PX487-X487-170405112818-M1U9_BZDET",
+    institutionLink:
+      "https://www.justdial.com/Thrissur/Sree-Krishna-Higher-Secondary-School-Near-Mahavishnu-Temple-Anandapuram/9999PX487-X487-170405112818-M1U9_BZDET",
     period: "Jul 2018 - Mar 2019",
   },
 

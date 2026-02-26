@@ -15,7 +15,8 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sanaillikkal.in"),
   title: {
-    default: "Sana Illikkal | Full Stack Developer & Backend Engineer | Portfolio",
+    default:
+      "Sana Illikkal | Full Stack Developer & Backend Engineer | Portfolio",
     template: "%s | Sana Illikkal",
   },
   description:
@@ -88,13 +89,11 @@ export const metadata: Metadata = {
     "geo.region": "IN-KL",
     "geo.placename": "Thrissur, Kerala, India",
     "geo.position": "10.35, 76.21", // Irinjalakuda coordinates roughly
-    "ICBM": "10.35, 76.21",
+    ICBM: "10.35, 76.21",
     "revisit-after": "7 days",
-    "language": "English",
-  }
+    language: "English",
+  },
 };
-
-
 
 export default function RootLayout({
   children,
@@ -116,7 +115,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link rel="preconnect" href="https://skillicons.dev" />
-        
+
         {/* Apple Touch Icon - using the professional image */}
         <link rel="apple-touch-icon" href="/sana 1.jpeg" />
 
@@ -128,27 +127,28 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "Person",
-                "name": "Sana Illikkal",
-                "url": "https://sanaillikkal.in",
-                "image": "https://sanaillikkal.in/sana 1.jpeg",
-                "jobTitle": "Full Stack Developer",
-                "worksFor": {
+                name: "Sana Illikkal",
+                url: "https://sanaillikkal.in",
+                image: "https://sanaillikkal.in/sana 1.jpeg",
+                jobTitle: "Full Stack Developer",
+                worksFor: {
                   "@type": "Organization",
-                  "name": "Freelance",
+                  name: "Freelance",
                 },
-                "description": "Full Stack Developer specializing in MERN stack, Next.js, and scalable backend architectures.",
-                "address": {
+                description:
+                  "Full Stack Developer specializing in MERN stack, Next.js, and scalable backend architectures.",
+                address: {
                   "@type": "PostalAddress",
-                  "addressLocality": "Irinjalakuda, Thrissur",
-                  "addressRegion": "Kerala",
-                  "addressCountry": "IN"
+                  addressLocality: "Irinjalakuda, Thrissur",
+                  addressRegion: "Kerala",
+                  addressCountry: "IN",
                 },
-                "sameAs": [
+                sameAs: [
                   "https://github.com/sanashaju",
                   "https://linkedin.com/in/sanashaju",
                   "https://leetcode.com/u/sanaillikkal/",
                 ],
-                "knowsAbout": [
+                knowsAbout: [
                   "Full Stack Development",
                   "MERN Stack",
                   "Node.js",
@@ -160,41 +160,43 @@ export default function RootLayout({
                   "Backend Architecture",
                   "API Development",
                   "AWS",
-                  "Docker"
-                ]
+                  "Docker",
+                ],
               },
               {
                 "@context": "https://schema.org",
                 "@type": "ProfessionalService",
-                "name": "Sana Illikkal - Full Stack Development Services",
-                "description": "Specialized in building robust, scalable MERN stack applications and high-performance frontend interfaces.",
-                "image": "https://sanaillikkal.in/og-image.png",
-                "provider": {
+                name: "Sana Illikkal - Full Stack Development Services",
+                description:
+                  "Specialized in building robust, scalable MERN stack applications and high-performance frontend interfaces.",
+                image: "https://sanaillikkal.in/og-image.png",
+                provider: {
                   "@type": "Person",
-                  "name": "Sana Illikkal"
+                  name: "Sana Illikkal",
                 },
-                "areaServed": {
+                areaServed: {
                   "@type": "Country",
-                  "name": "India"
+                  name: "India",
                 },
-                "serviceType": [
+                serviceType: [
                   "Web Development",
                   "Full Stack Development",
                   "Backend Engineering",
-                  "Software Development"
-                ]
+                  "Software Development",
+                ],
               },
               {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "name": "Sana Illikkal Portfolio",
-                "url": "https://sanaillikkal.in/",
-                "description": "Professional portfolio website covering projects, skills, and experience as a Full Stack Developer.",
-                "author": {
+                name: "Sana Illikkal Portfolio",
+                url: "https://sanaillikkal.in/",
+                description:
+                  "Professional portfolio website covering projects, skills, and experience as a Full Stack Developer.",
+                author: {
                   "@type": "Person",
-                  "name": "Sana Illikkal"
-                }
-              }
+                  name: "Sana Illikkal",
+                },
+              },
             ]),
           }}
         />

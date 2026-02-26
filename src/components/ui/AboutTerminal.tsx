@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const DEFAULT_ABOUT_TEXT =
   "Hi, I'm Sana Shaju, a Full Stack Developer specializing in the MERN stack — building scalable, high-performance web applications using React.js, Next.js, Node.js, NestJS, TypeScript, MongoDB, and PostgreSQL. With experience delivering projects for clients worldwide, I craft efficient, user-centric digital products that solve real-world problems. Passionate about clean code and continuous growth, I'm committed to turning ideas into impactful, production-ready solutions.";
@@ -19,7 +19,7 @@ export function AboutTerminal({
   typingSpeed = 15,
   isInView = true,
 }: AboutTerminalProps) {
-  const [typedText, setTypedText] = useState('');
+  const [typedText, setTypedText] = useState("");
   const [commandExecuted, setCommandExecuted] = useState(false);
 
   useEffect(() => {
@@ -57,14 +57,12 @@ export function AboutTerminal({
         <div className="h-3 w-3 rounded-full bg-red-500/80" />
         <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
         <div className="h-3 w-3 rounded-full bg-green-500/80" />
-        <span className="ml-4 font-mono text-xs text-accent/70">
-          sana.bio
-        </span>
+        <span className="ml-4 font-mono text-xs text-accent/70">sana.bio</span>
       </div>
       <div className="flex min-h-0 flex-1 flex-col p-4 font-mono text-sm leading-relaxed sm:p-6">
         <div className="shrink-0 text-accent">$ cat about.txt</div>
         <div className="mt-3 min-h-0 flex-1 overflow-y-auto text-foreground/80 selection:bg-accent/30">
-          {commandExecuted && typedText.length > 0 ? typedText : '\u00A0'}
+          {commandExecuted && typedText.length > 0 ? typedText : "\u00A0"}
           {isTyping && <span className="animate-pulse text-accent">_</span>}
           {isComplete && (
             <span className="ml-1 animate-pulse text-accent">█</span>

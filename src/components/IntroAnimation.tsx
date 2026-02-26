@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import HandwritingAnimation from './HandwritingAnimation';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import HandwritingAnimation from "./HandwritingAnimation";
 
 export default function IntroAnimation() {
   const [show, setShow] = useState(true);
@@ -24,7 +24,7 @@ export default function IntroAnimation() {
     setTimeout(() => {
       setShow(false);
       // sessionStorage.setItem('hasSeenIntro', 'true');
-    }, 1000); 
+    }, 1000);
   };
 
   return (

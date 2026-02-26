@@ -65,8 +65,6 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
-
-
   return (
     <>
       <nav

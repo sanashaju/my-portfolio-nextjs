@@ -107,7 +107,8 @@ export default function Achievements() {
       <div className="flex flex-col gap-2">
         <h2 className="section-title">Achievements.</h2>
         <p className="text-sm text-muted-foreground max-w-2xl">
-          Showcase GitHub trophies, LeetCode badges, and other milestones that highlight dedication to coding and continuous learning.
+          Showcase GitHub trophies, LeetCode badges, and other milestones that
+          highlight dedication to coding and continuous learning.
         </p>
       </div>
 

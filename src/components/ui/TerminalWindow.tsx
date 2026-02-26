@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { Terminal, Cpu, Wifi, Disc, Keyboard } from 'lucide-react';
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { Terminal, Cpu, Wifi, Disc, Keyboard } from "lucide-react";
 
 const ASCII_ART = `
  ██████╗ █████╗ ███╗   ██╗ █████╗ 
@@ -16,7 +16,7 @@ const ASCII_ART = `
 interface LogEntry {
   id: string | number;
   message: React.ReactNode;
-  level?: 'info' | 'success' | 'warning' | 'error' | 'system';
+  level?: "info" | "success" | "warning" | "error" | "system";
   timestamp?: string;
   isCommand?: boolean;
   color?: string;
@@ -31,7 +31,7 @@ const Typewriter = ({
   delay?: number;
   speed?: number;
 }) => {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
@@ -59,16 +59,16 @@ const Typewriter = ({
 
 export function TerminalWindow() {
   const [history, setHistory] = useState<LogEntry[]>([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [isBooting, setIsBooting] = useState(true);
-  const [placeholderText, setPlaceholderText] = useState('');
+  const [placeholderText, setPlaceholderText] = useState("");
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: false, margin: '-30%' });
+  const isInView = useInView(containerRef, { once: false, margin: "-30%" });
 
   const placeholderPrompts = [
     "try me! type 'help' →",
@@ -78,9 +78,9 @@ export function TerminalWindow() {
   ];
 
   const getLocalTime = (date: Date = new Date()) => {
-    const h = date.getHours().toString().padStart(2, '0');
-    const m = date.getMinutes().toString().padStart(2, '0');
-    const s = date.getSeconds().toString().padStart(2, '0');
+    const h = date.getHours().toString().padStart(2, "0");
+    const m = date.getMinutes().toString().padStart(2, "0");
+    const s = date.getSeconds().toString().padStart(2, "0");
     return `${h}:${m}:${s}`;
   };
 
@@ -88,39 +88,39 @@ export function TerminalWindow() {
     const now = new Date();
     const bootLogs: LogEntry[] = [
       {
-        id: 'boot-1',
+        id: "boot-1",
         timestamp: getLocalTime(now),
-        level: 'system',
-        message: 'INITIALIZING NEURAL INTERFACE...',
-        color: 'text-accent',
+        level: "system",
+        message: "INITIALIZING NEURAL INTERFACE...",
+        color: "text-accent",
       },
       {
-        id: 'boot-2',
+        id: "boot-2",
         timestamp: getLocalTime(new Date(now.getTime() + 400)),
-        level: 'info',
-        message: 'LOADING CORE MODULES...',
-        color: 'text-accent-secondary',
+        level: "info",
+        message: "LOADING CORE MODULES...",
+        color: "text-accent-secondary",
       },
       {
-        id: 'boot-3',
+        id: "boot-3",
         timestamp: getLocalTime(new Date(now.getTime() + 800)),
-        level: 'warning',
-        message: 'ESTABLISHING SECURE CONNECTION...',
-        color: 'text-yellow-400',
+        level: "warning",
+        message: "ESTABLISHING SECURE CONNECTION...",
+        color: "text-yellow-400",
       },
       {
-        id: 'boot-4',
+        id: "boot-4",
         timestamp: getLocalTime(new Date(now.getTime() + 1200)),
-        level: 'success',
-        message: 'ACCESS GRANTED',
-        color: 'text-green-400',
+        level: "success",
+        message: "ACCESS GRANTED",
+        color: "text-green-400",
       },
     ];
     const timeouts: ReturnType<typeof setTimeout>[] = [];
     bootLogs.forEach((log, i) => {
       const t = setTimeout(
         () => {
-          setHistory(prev => [...prev, log]);
+          setHistory((prev) => [...prev, log]);
           if (i === bootLogs.length - 1) setIsBooting(false);
         },
         400 * (i + 1)
@@ -137,19 +137,19 @@ export function TerminalWindow() {
     if (isDeleting) {
       t = setTimeout(() => {
         setPlaceholderText(current.slice(0, charIndex - 1));
-        setCharIndex(c => c - 1);
+        setCharIndex((c) => c - 1);
       }, 50);
     } else {
       t = setTimeout(() => {
         setPlaceholderText(current.slice(0, charIndex + 1));
-        setCharIndex(c => c + 1);
+        setCharIndex((c) => c + 1);
       }, 100);
     }
     if (!isDeleting && charIndex === current.length) {
       t = setTimeout(() => setIsDeleting(true), 2000);
     } else if (isDeleting && charIndex === 0) {
       setIsDeleting(false);
-      setPlaceholderIndex(p => (p + 1) % placeholderPrompts.length);
+      setPlaceholderIndex((p) => (p + 1) % placeholderPrompts.length);
     }
     return () => clearTimeout(t);
   }, [charIndex, isDeleting, placeholderIndex, isBooting]);
@@ -158,12 +158,12 @@ export function TerminalWindow() {
     if (scrollRef.current) {
       scrollRef.current.scrollTo({
         top: scrollRef.current.scrollHeight,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
       const t = setTimeout(() => {
         scrollRef.current?.scrollTo({
           top: scrollRef.current.scrollHeight,
-          behavior: 'smooth',
+          behavior: "smooth",
         });
       }, 150);
       return () => clearTimeout(t);
@@ -179,17 +179,17 @@ export function TerminalWindow() {
   const handleContainerClick = () => inputRef.current?.focus();
 
   const addResponse = (lines: (string | React.ReactNode)[]) => {
-    const newLogs: LogEntry[] = lines.map(line => ({
+    const newLogs: LogEntry[] = lines.map((line) => ({
       id: `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
       message: line,
-      color: 'text-muted-foreground',
+      color: "text-muted-foreground",
     }));
-    setHistory(prev => [...prev, ...newLogs]);
+    setHistory((prev) => [...prev, ...newLogs]);
   };
 
   const handleCommand = (cmd: string) => {
     const clean = cmd.trim().toLowerCase();
-    setHistory(prev => [
+    setHistory((prev) => [
       ...prev,
       {
         id: `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
@@ -204,10 +204,10 @@ export function TerminalWindow() {
     ]);
 
     switch (clean) {
-      case 'help':
+      case "help":
         addResponse([
           <Typewriter key="h1" text="available commands:" speed={5} />,
-          '',
+          "",
           <div
             key="help-grid"
             className="grid grid-cols-[100px_1fr] gap-x-2 gap-y-1"
@@ -251,7 +251,7 @@ export function TerminalWindow() {
           </div>,
         ]);
         break;
-      case 'whoami':
+      case "whoami":
         addResponse([
           <div key="whoami" className="flex flex-col gap-1">
             <span className="font-bold text-foreground">
@@ -272,26 +272,26 @@ export function TerminalWindow() {
               />
             </span>
           </div>,
-          '',
+          "",
         ]);
         break;
-      case 'status':
+      case "status":
         addResponse([
           <div key="status" className="flex flex-col gap-1">
             <div>
-              <span className="text-accent">SYSTEM:</span>{' '}
+              <span className="text-accent">SYSTEM:</span>{" "}
               <span className="text-green-500">
                 <Typewriter text="ONLINE" delay={50} speed={10} />
               </span>
             </div>
             <div>
-              <span className="text-accent">WORKFLOW:</span>{' '}
+              <span className="text-accent">WORKFLOW:</span>{" "}
               <span className="text-yellow-500">
                 <Typewriter text="ACTIVE" delay={100} speed={10} />
               </span>
             </div>
             <div>
-              <span className="text-accent">STATE:</span>{' '}
+              <span className="text-accent">STATE:</span>{" "}
               <span className="text-purple-500">
                 <Typewriter text="STABLE" delay={150} speed={10} />
               </span>
@@ -299,14 +299,14 @@ export function TerminalWindow() {
           </div>,
         ]);
         break;
-      case 'focus':
+      case "focus":
         addResponse([
           <div key="focus" className="flex flex-col gap-1">
             <span className="mb-2 text-muted-foreground underline decoration-accent/30 underline-offset-4">
               <Typewriter text="current focus:" speed={5} />
             </span>
             <span className="flex items-center gap-2">
-              <span className="text-accent">→</span>{' '}
+              <span className="text-accent">→</span>{" "}
               <Typewriter
                 text="developing secure authentication flows"
                 delay={50}
@@ -314,7 +314,7 @@ export function TerminalWindow() {
               />
             </span>
             <span className="flex items-center gap-2">
-              <span className="text-accent">→</span>{' '}
+              <span className="text-accent">→</span>{" "}
               <Typewriter
                 text="crafting robust RESTful APIs"
                 delay={100}
@@ -322,7 +322,7 @@ export function TerminalWindow() {
               />
             </span>
             <span className="flex items-center gap-2">
-              <span className="text-accent">→</span>{' '}
+              <span className="text-accent">→</span>{" "}
               <Typewriter
                 text="designing scalable backend architectures"
                 delay={150}
@@ -332,11 +332,11 @@ export function TerminalWindow() {
           </div>,
         ]);
         break;
-      case 'logs':
+      case "logs":
         addResponse([
           <div key="logs" className="flex flex-col gap-1 font-mono text-xs">
             <span className="flex gap-2">
-              <span className="text-accent">[INFO]</span>{' '}
+              <span className="text-accent">[INFO]</span>{" "}
               <span className="text-muted-foreground">
                 <Typewriter
                   text="optimizing API performance and security"
@@ -346,7 +346,7 @@ export function TerminalWindow() {
               </span>
             </span>
             <span className="flex gap-2">
-              <span className="text-accent">[INFO]</span>{' '}
+              <span className="text-accent">[INFO]</span>{" "}
               <span className="text-muted-foreground">
                 <Typewriter
                   text="integrating relational and NoSQL databases"
@@ -356,7 +356,7 @@ export function TerminalWindow() {
               </span>
             </span>
             <span className="flex gap-2">
-              <span className="text-accent">[INFO]</span>{' '}
+              <span className="text-accent">[INFO]</span>{" "}
               <span className="text-muted-foreground">
                 <Typewriter
                   text="implementing caching with Redis"
@@ -368,14 +368,17 @@ export function TerminalWindow() {
           </div>,
         ]);
         break;
-      case 'thought':
+      case "thought":
         addResponse([
           <span key="thought" className="italic text-emerald-400">
-            <Typewriter text="• clean code is the foundation of reliability" speed={15} />
+            <Typewriter
+              text="• clean code is the foundation of reliability"
+              speed={15}
+            />
           </span>,
         ]);
         break;
-      case 'sudo':
+      case "sudo":
         addResponse([
           <div key="sudo" className="flex flex-col text-red-500">
             <span>
@@ -387,37 +390,37 @@ export function TerminalWindow() {
           </div>,
         ]);
         break;
-      case 'clear':
+      case "clear":
         setHistory([]);
         break;
       default:
-        if (clean !== '')
+        if (clean !== "")
           addResponse([
             `Command not found: ${clean}. Type 'help' for options.`,
           ]);
         break;
     }
-    setInput('');
+    setInput("");
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') handleCommand(input);
+    if (e.key === "Enter") handleCommand(input);
   };
 
   const getLevelColor = (level?: string) => {
     switch (level) {
-      case 'info':
-        return 'text-accent-secondary';
-      case 'warning':
-        return 'text-yellow-500';
-      case 'success':
-        return 'text-green-500';
-      case 'error':
-        return 'text-red-500';
-      case 'system':
-        return 'text-accent';
+      case "info":
+        return "text-accent-secondary";
+      case "warning":
+        return "text-yellow-500";
+      case "success":
+        return "text-green-500";
+      case "error":
+        return "text-red-500";
+      case "system":
+        return "text-accent";
       default:
-        return 'text-muted-foreground';
+        return "text-muted-foreground";
     }
   };
 
@@ -460,7 +463,7 @@ export function TerminalWindow() {
           </pre>
           <div className="space-y-1.5">
             <AnimatePresence mode="popLayout">
-              {history.map(log => (
+              {history.map((log) => (
                 <motion.div
                   key={log.id}
                   layout
@@ -486,7 +489,7 @@ export function TerminalWindow() {
                   )}
                   <span
                     className={
-                      log.isCommand ? '' : log.color || 'text-foreground/90'
+                      log.isCommand ? "" : log.color || "text-foreground/90"
                     }
                   >
                     {log.message}
@@ -500,32 +503,34 @@ export function TerminalWindow() {
                 animate={{ opacity: 1 }}
                 className="group relative flex items-center gap-2 pb-1 pt-2"
               >
-                  <motion.div
-                    animate={{ opacity: [0.3, 0.6, 0.3] }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                    }}
-                    className="absolute -inset-x-2 inset-y-0 -z-10 rounded bg-accent/5"
-                  />
+                <motion.div
+                  animate={{ opacity: [0.3, 0.6, 0.3] }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute -inset-x-2 inset-y-0 -z-10 rounded bg-accent/5"
+                />
                 <motion.span
                   animate={{ x: [0, 3, 0] }}
                   transition={{
                     duration: 1.5,
                     repeat: Infinity,
-                    ease: 'easeInOut',
+                    ease: "easeInOut",
                   }}
                   className="shrink-0 text-accent-secondary"
                 >
                   ➜
                 </motion.span>
                 <span className="shrink-0 whitespace-nowrap">
-                  <span className="hidden text-accent sm:inline">
-                    sana
+                  <span className="hidden text-accent sm:inline">sana</span>
+                  <span className="hidden text-muted-foreground sm:inline">
+                    :
                   </span>
-                  <span className="hidden text-muted-foreground sm:inline">:</span>
-                  <span className="hidden text-accent-secondary sm:inline">~</span>
+                  <span className="hidden text-accent-secondary sm:inline">
+                    ~
+                  </span>
                   <span className="text-muted-foreground">$</span>
                   <span className="text-muted-foreground"> </span>
                 </span>
@@ -534,7 +539,7 @@ export function TerminalWindow() {
                     ref={inputRef}
                     type="text"
                     value={input}
-                    onChange={e => setInput(e.target.value)}
+                    onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyDown}
                     className="w-full border-none bg-transparent font-mono text-sm text-foreground outline-none caret-accent placeholder:text-accent/30"
                     autoComplete="off"
@@ -549,7 +554,7 @@ export function TerminalWindow() {
         <div className="flex h-7 shrink-0 items-center justify-between border-t border-border/50 bg-muted/20 px-3 font-mono text-[9px] text-muted-foreground sm:text-[10px]">
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1.5">
-              <Disc className={`h-3 w-3 ${isBooting ? 'animate-spin' : ''}`} />
+              <Disc className={`h-3 w-3 ${isBooting ? "animate-spin" : ""}`} />
               <span>STATUS: READY</span>
             </div>
             <div className="hidden items-center gap-1.5 sm:flex">

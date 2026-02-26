@@ -62,10 +62,10 @@ const ProfileImage = ({ isHovering, setIsHovering }: ProfileImageProps) => (
     >
       {/* Glossy White Sheen */}
       <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent rounded-t-[2.2rem] pointer-events-none" />
-      
+
       {/* Precise White Inner Edge */}
       <div className="absolute inset-0 rounded-[2.2rem] border-[0.5px] border-white/30 pointer-events-none" />
-      
+
       <div className="w-full h-full rounded-[2rem] overflow-hidden bg-background/40 relative z-10">
         {isHovering ? (
           <Image
@@ -157,7 +157,9 @@ const Header = () => {
             <p className="text-blue-500 uppercase tracking-[0.3em] text-[0.6rem] mb-1">
               speciality
             </p>
-            <p className="font-semibold">Scalable Architectures & Full Stack Solutions</p>
+            <p className="font-semibold">
+              Scalable Architectures & Full Stack Solutions
+            </p>
           </div>
           <div className="contact-card">
             <p className="text-blue-500 uppercase tracking-[0.3em] text-[0.6rem] mb-1">

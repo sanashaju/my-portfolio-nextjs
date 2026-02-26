@@ -21,7 +21,8 @@ export default function Footer() {
               {ABOUT_ME.name.split(" ")[0]}.
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Full Stack Developer specializing in building scalable MERN stack applications and reliable backend architectures.
+              Full Stack Developer specializing in building scalable MERN stack
+              applications and reliable backend architectures.
             </p>
           </div>
 
@@ -62,13 +63,26 @@ export default function Footer() {
               Connect
             </h4>
             <div className="flex gap-4">
-              <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-muted/30 hover:bg-accent/10 hover:text-accent transition-all text-muted-foreground border border-border/40">
+              <a
+                href={SOCIAL_LINKS.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-muted/30 hover:bg-accent/10 hover:text-accent transition-all text-muted-foreground border border-border/40"
+              >
                 <Github size={18} />
               </a>
-              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-muted/30 hover:bg-accent/10 hover:text-accent transition-all text-muted-foreground border border-border/40">
+              <a
+                href={SOCIAL_LINKS.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-muted/30 hover:bg-accent/10 hover:text-accent transition-all text-muted-foreground border border-border/40"
+              >
                 <Linkedin size={18} />
               </a>
-              <a href={SOCIAL_LINKS.email} className="p-2 rounded-lg bg-muted/30 hover:bg-accent/10 hover:text-accent transition-all text-muted-foreground border border-border/40">
+              <a
+                href={SOCIAL_LINKS.email}
+                className="p-2 rounded-lg bg-muted/30 hover:bg-accent/10 hover:text-accent transition-all text-muted-foreground border border-border/40"
+              >
                 <Mail size={18} />
               </a>
             </div>
@@ -80,7 +94,8 @@ export default function Footer() {
             © {new Date().getFullYear()} {ABOUT_ME.name}. All rights reserved.
           </p>
           <p className="flex items-center gap-1">
-            Built with <span className="text-accent">Next.js 15</span> & <span className="text-accent">Framer Motion</span>
+            Built with <span className="text-accent">Next.js 15</span> &{" "}
+            <span className="text-accent">Framer Motion</span>
           </p>
         </div>
       </div>
