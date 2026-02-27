@@ -157,7 +157,7 @@ export const PROJECTS = [
     link: "",
     github: "https://github.com/sanashaju/node-rest-api-ts",
     image:
-      "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
+      "Backend API.png",
     color: "#00FF94",
   },
   {
