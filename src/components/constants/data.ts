@@ -116,7 +116,7 @@ export const PROJECTS = [
     link: "",
     github: "https://github.com/sanashaju/my-portfolio-nextjs",
     image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
+      "modern portfolio img.png",
     color: "#3178C6",
   },
   {
@@ -178,7 +178,7 @@ export const PROJECTS = [
     link: "https://royal-essence.onrender.com/",
     github: "https://github.com/sanashaju/RoyalEssence-Ecommerce-Platform",
     image:
-      "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop",
+      "royalessence img.png",
     color: "#00FF94",
   },
 ];
