@@ -30,7 +30,7 @@ export const SOCIAL_LINKS = {
   email: "mailto:sanashajuillikkal@gmail.com",
   // blog: "https://yourblog.com", // remove if you don't have a blog
   resume:
-    "https://drive.google.com/file/d/1P1jCvcDSaLbvcJLkIRzmuIJrDIVeWggs/view?usp=sharhttps://drive.google.com/file/d/11nqiIVQV8un0ym07FR9-5ZPpjj1OA3AA/view?usp=sharing",
+    "https://drive.google.com/file/d/11nqiIVQV8un0ym07FR9-5ZPpjj1OA3AA/view?usp=sharing",
   phone: "+91 77367 09420",
   whatsapp: "https://wa.me/+917736709420",
 };
@@ -101,7 +101,7 @@ export const SKILLS = {
 export const PROJECTS = [
   {
     id: 1,
-    name: "Modern-Portfolio",
+    name: "Portfolio Website",
     category: "FRONTEND",
     description:
       "Crafted a responsive 9-section portfolio using Next.js 15, TypeScript, and Framer Motion with dark mode support.\nIntegrated GitHub and Leetcode APIs displaying 261+ solved problems and 64-day max streak.\nAchieved 90+ Lighthouse score via SEO, code splitting, and Open Graph meta tags.\nEnsured code quality with ESLint, Prettier, and Vercel Analytics.",
@@ -184,6 +184,25 @@ export const PROJECTS = [
 ];
 
 export const EXPERIENCE = [
+  {
+    company: "KaliWeb International , Irinjalakuda",
+    companyLink: "https://kaliweb.in/",
+    role: "Junior Developer",
+    period: "May 2026 - Present",
+    location: "Onsite",
+    description:
+      "Developed and maintained full-stack web applications using ASP.NET Core, C#, React.js, and SQL Server, contributing to both frontend and backend development. Worked with Entity Framework Core for database operations, including entity modeling, migrations, relationships, and database optimization. Used Swagger/OpenAPI and Postman to develop, document, test, and validate REST APIs throughout the development process.",
+    skills: [
+      "C#",
+      "ASP.NET Core",
+      "React.js",
+      "SQL Server",
+      "Entity Framework Core",
+      "Swagger / OpenAPI",
+      "Entity Modeling",
+      "Database Migrations",
+    ],
+  },
   {
     company: "G-Tec Education, Irinjalakuda",
     companyLink: "https://gtecirinjalakuda.com/",
