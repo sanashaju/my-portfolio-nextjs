@@ -162,7 +162,7 @@ export const PROJECTS = [
   },
   {
     id: 4,
-    name: "RoyalEssence E-commerce",
+    name: "Ecommerce Platform",
     category: "Full Stack",
     description:
       "Constructed a full-stack e-commerce platform managing 100+ products using Node.js, Express.js, MongoDB, and MVC architecture.\nIntegrated JWT authentication with cart, wishlist, and order tracking features.\nArchitected an admin dashboard with product/user management and real-time Chart.js analytics.\nAdded soft delete, user blocking, and order management, cutting admin workload by 40%.",
