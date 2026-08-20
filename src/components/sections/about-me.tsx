@@ -1,177 +1,131 @@
-"use client";
+// src/sections/AboutMe.tsx
 
-import { useRef } from "react";
-import { useInView, motion } from "framer-motion";
-import { ChevronDown, Mail, FileText } from "lucide-react";
-import { SiLeetcode } from "react-icons/si";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import Link from "next/link";
-
-import { ABOUT_ME, SOCIAL_LINKS } from "@/components/constants/data";
-import { TerminalWindow } from "@/components/ui/TerminalWindow";
-import { AboutTerminal } from "@/components/ui/AboutTerminal";
-
-// =============================================
-// SOCIAL BUTTONS DATA
-// =============================================
-const SOCIAL_BUTTONS = [
-  {
-    href: SOCIAL_LINKS.github,
-    label: "GitHub",
-    icon: <FaGithub className="w-5 h-5" />,
-  },
-  {
-    href: SOCIAL_LINKS.linkedin,
-    label: "LinkedIn",
-    icon: <FaLinkedin className="w-5 h-5" />,
-  },
-  {
-    href: SOCIAL_LINKS.leetcode,
-    label: "LeetCode",
-    icon: <SiLeetcode className="w-5 h-5" />,
-  },
-  {
-    href: SOCIAL_LINKS.resume,
-    label: "Resume",
-    icon: (
-      <>
-        <FileText className="w-5 h-5" /> Resume
-      </>
-    ),
-    className: "flex items-center gap-2 font-medium px-6",
-  },
-  {
-    href: SOCIAL_LINKS.email,
-    label: "Email",
-    icon: (
-      <>
-        <Mail className="w-5 h-5" /> Email
-      </>
-    ),
-    className: "flex items-center gap-2 font-medium px-6",
-  },
-];
-
-const handleSpecialNavigation = (
-  event: React.MouseEvent<HTMLAnchorElement>,
-  href: string
-) => {
-  if (!href) return;
-  const trimmed = href.trim();
-  if (
-    typeof window !== "undefined" &&
-    (trimmed.startsWith("mailto:") || trimmed.startsWith("tel:"))
-  ) {
-    event.preventDefault();
-    window.location.href = trimmed;
-  }
-};
-
-export default function AboutMe() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
-
+const AboutMe = () => {
   return (
-    <section id="about" ref={sectionRef} className="pb-12 space-y-6">
-      <div className="flex flex-col gap-2">
-        <h2 className="section-title w-full">About.</h2>
+    <section className="py-12">
+
+      {/* =========================
+         SECTION TITLE
+      ========================= */}
+
+      <div className="mb-8">
+        <h2 className="text-4xl font-black lowercase tracking-tight text-[var(--color-accent)] md:text-5xl">
+          about.
+        </h2>
       </div>
 
-      <div className="space-y-10">
-        {/* Try me hint */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center justify-center gap-2 md:justify-start"
-        >
-          <motion.span
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.4 }}
-            className="text-base font-bold text-accent"
-          >
-            Try me!
-          </motion.span>
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.35, duration: 0.3 }}
-            className="text-sm text-muted-foreground"
-          >
-            click & type
-          </motion.span>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              delay: 0.5,
-              type: "spring",
-              stiffness: 400,
-              damping: 15,
-            }}
-            className="flex shrink-0"
-          >
-            <ChevronDown className="h-5 w-5 text-accent animate-bounce" />
-          </motion.div>
-        </motion.div>
+      {/* =========================
+         MAIN CARD
+      ========================= */}
 
-        {/* Grid: terminal | cat bio */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {/* Left: Terminal */}
-          <div className="flex min-h-[320px] justify-center lg:justify-start sm:min-h-[380px]">
-            <TerminalWindow />
-          </div>
+      <div className="grid overflow-hidden rounded-[36px] border border-[var(--color-border-main)] bg-[var(--color-bg-elevated)] lg:grid-cols-2">
 
-          {/* Right: Cat bio */}
-          <div className="flex min-h-[320px] items-stretch sm:min-h-[380px]">
-            <AboutTerminal isInView={isInView} />
+        {/* =========================
+           LEFT SIDE - IMAGE
+        ========================= */}
+
+        <div className="flex items-center justify-center border-b border-[var(--color-border-main)] p-8 lg:border-b-0 lg:border-r">
+
+          <div className="group overflow-hidden rounded-[28px] border border-[var(--color-border-main)]">
+
+            <img
+              src="/profile.jpg"
+              alt="Sana Illikkal"
+              className="h-[500px] w-[360px] object-cover transition duration-500 group-hover:scale-105"
+            />
+
           </div>
         </div>
 
-        {/* Social Buttons */}
-        <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
-          {SOCIAL_BUTTONS.filter(
-            (btn) => btn.href && btn.href.trim() !== ""
-          ).map((btn) => {
-            const href = btn.href.trim();
-            const isExternal = href.startsWith("http");
-            const baseClass = `inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/20 px-4 py-2 text-sm font-medium text-foreground/80 tracking-wide transition-all hover:border-accent hover:text-accent hover:shadow-[0_0_20px_rgba(var(--accent),0.2)] hover:-translate-y-1 ${btn.className || ""}`;
+        {/* =========================
+           RIGHT SIDE - CONTENT
+        ========================= */}
 
-            const isSpecial = href.startsWith("mailto:") || href.startsWith("tel:");
+        <div className="flex flex-col justify-center p-8 md:p-12">
 
-            if (isExternal) {
-              return (
-                <Link
-                  key={btn.label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={baseClass}
-                  aria-label={btn.label}
-                >
-                  {btn.icon}
-                </Link>
-              );
-            }
+          <span className="mb-5 w-fit rounded-full border border-[var(--color-border-main)] bg-[var(--color-accent-soft)] px-5 py-2 text-xs uppercase tracking-[0.35em] text-[var(--color-accent)]">
+            Full Stack Developer
+          </span>
 
-            return (
-              <a
-                key={btn.label}
-                href={href}
-                onClick={(event) =>
-                  isSpecial && handleSpecialNavigation(event, href)
-                }
-                className={baseClass}
-                aria-label={btn.label}
-              >
-                {btn.icon}
-              </a>
-            );
-          })}
+          <h3 className="mb-3 text-4xl font-black tracking-tight text-[var(--color-text-primary)] md:text-6xl">
+            Sana Illikkal
+          </h3>
+
+          <p className="mb-2 text-sm uppercase tracking-[0.35em] text-[var(--color-text-secondary)]">
+            MERN STACK DEVELOPER
+          </p>
+
+          <p className="mb-8 max-w-2xl text-lg leading-9 text-[var(--color-text-secondary)]">
+            Hi, I'm Sana Illikkal — a passionate Full Stack Developer
+            specializing in the MERN stack, building scalable,
+            modern, and visually engaging web applications.
+            I enjoy creating responsive frontend experiences
+            combined with strong backend architecture.
+          </p>
+
+          {/* =========================
+             INFO CARDS
+          ========================= */}
+
+          <div className="grid gap-4 sm:grid-cols-2">
+
+            <div className="rounded-2xl border border-[var(--color-border-main)] bg-[rgba(0,217,255,0.03)] p-5">
+
+              <p className="mb-2 text-xs uppercase tracking-[0.3em] text-[var(--color-accent)]">
+                Availability
+              </p>
+
+              <h4 className="text-lg font-bold text-[var(--color-text-primary)]">
+                Open to Work & Freelance
+              </h4>
+
+            </div>
+
+            <div className="rounded-2xl border border-[var(--color-border-main)] bg-[rgba(0,217,255,0.03)] p-5">
+
+              <p className="mb-2 text-xs uppercase tracking-[0.3em] text-[var(--color-accent)]">
+                Specialty
+              </p>
+
+              <h4 className="text-lg font-bold text-[var(--color-text-primary)]">
+                MERN Stack Applications
+              </h4>
+
+            </div>
+
+            <div className="rounded-2xl border border-[var(--color-border-main)] bg-[rgba(0,217,255,0.03)] p-5 sm:col-span-2">
+
+              <p className="mb-2 text-xs uppercase tracking-[0.3em] text-[var(--color-accent)]">
+                Location
+              </p>
+
+              <h4 className="text-lg font-bold text-[var(--color-text-primary)]">
+                Thrissur, Kerala, India
+              </h4>
+
+            </div>
+
+          </div>
+
+          {/* =========================
+             SKILLS
+          ========================= */}
+
+          <div className="mt-8 flex flex-wrap gap-3">
+
+            <span className="pill-accent">React</span>
+            <span className="pill-accent">TypeScript</span>
+            <span className="pill-accent">Node.js</span>
+            <span className="pill-accent">Express.js</span>
+            <span className="pill-accent">MongoDB</span>
+            <span className="pill-accent">Tailwind CSS</span>
+
+          </div>
+
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default AboutMe;

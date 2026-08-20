@@ -30,7 +30,7 @@ export const SOCIAL_LINKS = {
   email: "mailto:sanashajuillikkal@gmail.com",
   // blog: "https://yourblog.com", // remove if you don't have a blog
   resume:
-    "https://drive.google.com/file/d/1P1jCvcDSaLbvcJLkIRzmuIJrDIVeWggs/view?usp=sharing",
+    "https://drive.google.com/file/d/1P1jCvcDSaLbvcJLkIRzmuIJrDIVeWggs/view?usp=sharhttps://drive.google.com/file/d/11nqiIVQV8un0ym07FR9-5ZPpjj1OA3AA/view?usp=sharing",
   phone: "+91 77367 09420",
   whatsapp: "https://wa.me/+917736709420",
 };
