@@ -121,7 +121,7 @@ export const PROJECTS = [
   },
   {
     id: 2,
-    name: "React-TS-Personal-Portfolio ",
+    name: "React-TypeScript-Personal-Portfolio",
     category: "Frontend",
     description:
       "Built responsive portfolio with React, TypeScript, Tailwind CSS, and Framer Motion animations.\nImproved performance by 60% via code splitting and lazy loading with Vite.\nIncreased discoverability by 75% through SEO optimization and Vercel deployment.\nEnhanced user experience with Framer Motion animations achieving 95% mobile compatibility.",
@@ -141,7 +141,7 @@ export const PROJECTS = [
   },
   {
     id: 3,
-    name: "Node-Mongoose-JWT-APIs-TS",
+    name: "Backend Rest APIs Project",
     category: "Backend",
     description:
       "Implemented production REST API using Node.js, TypeScript, MongoDB, Redis, and Docker.\nImproved performance by 50% via configured Redis caching for frequent data operations.\nSecured endpoints with JWT authentication, reducing security vulnerabilities by 80%.\nEstablished Jest testing suite achieving 90% code coverage for core API modules.",
